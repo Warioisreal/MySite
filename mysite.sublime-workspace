@@ -280,10 +280,13 @@
 	"buffers":
 	[
 		{
+			"contents": "{% extends 'basetask.html' %}\n{%load static %}\n{% block title_name %}\nEasyLearnZone - Phisics task\n{% endblock title_name %}\n{% block sbar %}\n      <div class=\"logo-details\">\n        <i class='bx bxl-c-plus-plus icon'><img src=\"{% static 'imajes/logo.png' %}\" style=\"width: 27px; height: 27px; filter: invert(100%);\"/></i>\n        <div class=\"logo_name\">Programming</div>\n        <i class='bx bx-menu' id=\"btn\"><img src=\"{% static 'imajes/3lines.png' %}\" style=\"width: 27px; height: 27px;\"/></i>\n      </div>\n      <ul class=\"nav-list\">\n        <li>\n          <i class='bx bx-search' style=\"width: 27px; padding-left: 1px; padding-top: 2px;\"><img src=\"{% static 'imajes/loupe.png' %}\" style=\"width: 27px; height: 27px;\"/></i>\n          <input type=\"text\" placeholder=\"Search...\">\n          <span class=\"tooltip\">Search</span>\n        </li>\n        <li>\n          <a href=\"{% url 'posts' %}\">\n          </a>\n          <span class=\"tooltip\">Home</span>\n        </li>\n        <li>\n          <a href=\"#\">\n            <i class='bx bx-user'><img src=\"{% static 'imajes/book.png' %}\" style=\"filter:invert(180);\" /></i>\n            <span class=\"links_name\">Авторские курсы</span>\n          </a>\n          <span class=\"tooltip\">Авторские курсы</span>\n        </li>\n        <li>\n          <a href=\"{% url 'phisics' %}\">\n            <i class='bx bx-user'><img src=\"{% static 'imajes/taskimg.png' %}\" style=\"filter:invert(180);\" /></i>\n            <span class=\"links_name\">Список олимпиад</span>\n          </a>\n          <span class=\"tooltip\">Список олимпиад</span>\n        </li>\n      </ul>\n{% endblock sbar %}\n{% block list%}\n    <li><span onclick=\"action(7)\">7 класс</span>\n        <ul class=\"ul\" id=\"7\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n    <li><span onclick=\"action(8)\">8 класс</span>\n        <ul class=\"ul\" id=\"8\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n    <li><span onclick=\"action(9)\">9 класс</span>\n        <ul class=\"ul\" id=\"9\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n    <li><span onclick=\"action(10)\">10 класс</span>\n        <ul class=\"ul\" id=\"10\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n    <li><span onclick=\"action(11)\">11 класс</span>\n        <ul class=\"ul\" id=\"11\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n{% endblock list%}",
 			"file": "blog/templates/blog/phisics_task.html",
+			"file_size": 3214,
+			"file_write_time": 133521999029009937,
 			"settings":
 			{
-				"buffer_size": 2892,
+				"buffer_size": 2760,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			},
@@ -295,7 +298,7 @@
 					"left_delete",
 					null,
 					"BAAAAHMFAAAAAAAAcwUAAAAAAAA0AQAAPGxpPgogICAgICAgICAgPGEgaHJlZj0ieyUgdXJsICdzYW5kYm94JyAlfSI+CiAgICAgICAgICAgIDxpIGNsYXNzPSdieCBieC11c2VyJz48aW1nIHNyYz0ieyUgc3RhdGljICdpbWFqZXMvaXRpbWcxLnBuZycgJX0iIHN0eWxlPSJmaWx0ZXI6aW52ZXJ0KDE4MCk7IiAvPjwvaT4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImxpbmtzX25hbWUiPtCf0LXRgdC+0YfQvdC40YbQsDwvc3Bhbj4KICAgICAgICAgIDwvYT4KICAgICAgICAgIDxzcGFuIGNsYXNzPSJ0b29sdGlwIj7Qn9C10YHQvtGH0L3QuNGG0LA8L3NwYW4+CiAgICAgICAgPC9saT5vBQAAAAAAAG8FAAAAAAAABAAAACAgICBrBQAAAAAAAGsFAAAAAAAABAAAACAgICBqBQAAAAAAAGoFAAAAAAAAAQAAAAo",
-					"AQAAAAAAAAABAAAAcwUAAAAAAACVBgAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAHMFAAAAAAAAlQYAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					7,
@@ -303,7 +306,7 @@
 					"left_delete",
 					null,
 					"AgAAAJQFAAAAAAAAlAUAAAAAAAABAAAAdJMFAAAAAAAAkwUAAAAAAAABAAAAaQ",
-					"AQAAAAAAAAABAAAAlQUAAAAAAACVBQAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJUFAAAAAAAAlQUAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					8,
@@ -313,7 +316,7 @@
 						"characters": "phi"
 					},
 					"AwAAAJMFAAAAAAAAlAUAAAAAAAAAAAAAlAUAAAAAAACVBQAAAAAAAAAAAACVBQAAAAAAAJYFAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAkwUAAAAAAACTBQAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJMFAAAAAAAAkwUAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					9,
@@ -321,7 +324,7 @@
 					"insert_dimensions",
 					null,
 					"AgAAAJMFAAAAAAAAkwUAAAAAAAADAAAAcGhpkwUAAAAAAACfBQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAlgUAAAAAAACWBQAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJYFAAAAAAAAlgUAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					10,
@@ -329,7 +332,7 @@
 					"left_delete",
 					null,
 					"BQAAAJ4FAAAAAAAAngUAAAAAAAABAAAAbJ0FAAAAAAAAnQUAAAAAAAABAAAAbZwFAAAAAAAAnAUAAAAAAAABAAAAdJsFAAAAAAAAmwUAAAAAAAABAAAAaJoFAAAAAAAAmgUAAAAAAAABAAAALg",
-					"AQAAAAAAAAABAAAAnwUAAAAAAACfBQAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJ8FAAAAAAAAnwUAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					13,
@@ -339,7 +342,7 @@
 						"characters": "Phisi"
 					},
 					"BgAAAFYAAAAAAAAAVwAAAAAAAAAAAAAAVwAAAAAAAABXAAAAAAAAAAsAAABQcm9ncmFtbWluZ1cAAAAAAAAAWAAAAAAAAAAAAAAAWAAAAAAAAABZAAAAAAAAAAAAAABZAAAAAAAAAFoAAAAAAAAAAAAAAFoAAAAAAAAAWwAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAYQAAAAAAAABWAAAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGEAAAAAAAAAVgAAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					14,
@@ -349,7 +352,7 @@
 						"characters": "cs"
 					},
 					"AgAAAFsAAAAAAAAAXAAAAAAAAAAAAAAAXAAAAAAAAABdAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAWwAAAAAAAABbAAAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAFsAAAAAAAAAWwAAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					15,
@@ -359,7 +362,7 @@
 						"characters": " yas"
 					},
 					"BAAAAF0AAAAAAAAAXgAAAAAAAAAAAAAAXgAAAAAAAABfAAAAAAAAAAAAAABfAAAAAAAAAGAAAAAAAAAAAAAAAGAAAAAAAAAAYQAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAXQAAAAAAAABdAAAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAF0AAAAAAAAAXQAAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					16,
@@ -369,7 +372,7 @@
 						"characters": "k"
 					},
 					"AQAAAGEAAAAAAAAAYgAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAYQAAAAAAAABhAAAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGEAAAAAAAAAYQAAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					17,
@@ -377,7 +380,7 @@
 					"left_delete",
 					null,
 					"BAAAAGEAAAAAAAAAYQAAAAAAAAABAAAAa2AAAAAAAAAAYAAAAAAAAAABAAAAc18AAAAAAAAAXwAAAAAAAAABAAAAYV4AAAAAAAAAXgAAAAAAAAABAAAAeQ",
-					"AQAAAAAAAAABAAAAYgAAAAAAAABiAAAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGIAAAAAAAAAYgAAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					18,
@@ -387,7 +390,15 @@
 						"characters": "task"
 					},
 					"BAAAAF4AAAAAAAAAXwAAAAAAAAAAAAAAXwAAAAAAAABgAAAAAAAAAAAAAABgAAAAAAAAAGEAAAAAAAAAAAAAAGEAAAAAAAAAYgAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAXgAAAAAAAABeAAAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAF4AAAAAAAAAXgAAAAAAAAAAAAAAAADwvw"
+				],
+				[
+					6,
+					1,
+					"left_delete",
+					null,
+					"AQAAAHsDAAAAAAAAewMAAAAAAACEAAAACiAgICAgICAgICAgIDxpIGNsYXNzPSdieCBieC11c2VyJz48aW1nIHNyYz0ieyUgc3RhdGljICdpbWFqZXMvaG9tZS5wbmcnICV9IiAvPjwvaT4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImxpbmtzX25hbWUiPkhvbWU8L3NwYW4+",
+					"AQAAAAAAAAABAAAAewMAAAAAAAD/AwAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		},
@@ -409,7 +420,7 @@
 						"characters": " task"
 					},
 					"BQAAAGEAAAAAAAAAYgAAAAAAAAAAAAAAYgAAAAAAAABjAAAAAAAAAAAAAABjAAAAAAAAAGQAAAAAAAAAAAAAAGQAAAAAAAAAZQAAAAAAAAAAAAAAZQAAAAAAAABmAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAYQAAAAAAAABhAAAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGEAAAAAAAAAYQAAAAAAAAAAAAAAAADwvw"
 				]
 			]
 		},
@@ -438,7 +449,7 @@
 					"left_delete",
 					null,
 					"BAAAAHMFAAAAAAAAcwUAAAAAAAA0AQAAPGxpPgogICAgICAgICAgPGEgaHJlZj0ieyUgdXJsICdzYW5kYm94JyAlfSI+CiAgICAgICAgICAgIDxpIGNsYXNzPSdieCBieC11c2VyJz48aW1nIHNyYz0ieyUgc3RhdGljICdpbWFqZXMvaXRpbWcxLnBuZycgJX0iIHN0eWxlPSJmaWx0ZXI6aW52ZXJ0KDE4MCk7IiAvPjwvaT4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImxpbmtzX25hbWUiPtCf0LXRgdC+0YfQvdC40YbQsDwvc3Bhbj4KICAgICAgICAgIDwvYT4KICAgICAgICAgIDxzcGFuIGNsYXNzPSJ0b29sdGlwIj7Qn9C10YHQvtGH0L3QuNGG0LA8L3NwYW4+CiAgICAgICAgPC9saT5vBQAAAAAAAG8FAAAAAAAABAAAACAgICBrBQAAAAAAAGsFAAAAAAAABAAAACAgICBqBQAAAAAAAGoFAAAAAAAAAQAAAAo",
-					"AQAAAAAAAAABAAAAcwUAAAAAAACVBgAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAHMFAAAAAAAAlQYAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					6,
@@ -446,7 +457,7 @@
 					"left_delete",
 					null,
 					"AgAAAJQFAAAAAAAAlAUAAAAAAAABAAAAdJMFAAAAAAAAkwUAAAAAAAABAAAAaQ",
-					"AQAAAAAAAAABAAAAlQUAAAAAAACVBQAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJUFAAAAAAAAlQUAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					7,
@@ -456,7 +467,7 @@
 						"characters": "math"
 					},
 					"BAAAAJMFAAAAAAAAlAUAAAAAAAAAAAAAlAUAAAAAAACVBQAAAAAAAAAAAACVBQAAAAAAAJYFAAAAAAAAAAAAAJYFAAAAAAAAlwUAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAkwUAAAAAAACTBQAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJMFAAAAAAAAkwUAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					10,
@@ -466,7 +477,7 @@
 						"characters": "Math"
 					},
 					"BQAAAFYAAAAAAAAAVwAAAAAAAAAAAAAAVwAAAAAAAABXAAAAAAAAAAsAAABQcm9ncmFtbWluZ1cAAAAAAAAAWAAAAAAAAAAAAAAAWAAAAAAAAABZAAAAAAAAAAAAAABZAAAAAAAAAFoAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAYQAAAAAAAABWAAAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGEAAAAAAAAAVgAAAAAAAAAAAAAAAADwvw"
 				],
 				[
 					11,
@@ -476,7 +487,7 @@
 						"characters": " task"
 					},
 					"BQAAAFoAAAAAAAAAWwAAAAAAAAAAAAAAWwAAAAAAAABcAAAAAAAAAAAAAABcAAAAAAAAAF0AAAAAAAAAAAAAAF0AAAAAAAAAXgAAAAAAAAAAAAAAXgAAAAAAAABfAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAWgAAAAAAAABaAAAAAAAAAAAAAAAAAPC/"
+					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAFoAAAAAAAAAWgAAAAAAAAAAAAAAAADwvw"
 				]
 			]
 		}
@@ -512,6 +523,38 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"init",
+				"git: init"
+			],
+			[
+				"",
+				"BracketHighlighter: Documentation"
+			],
+			[
+				"push",
+				"git: push"
+			],
+			[
+				"stage",
+				"git: quick stage"
+			],
+			[
+				"remove",
+				"git: remote remove"
+			],
+			[
+				"rem",
+				"git: remote add"
+			],
+			[
+				"remote",
+				"git: remote add"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
 			[
 				"run",
 				"Django: Run Server"
@@ -549,16 +592,8 @@
 				"Django: Run Server"
 			],
 			[
-				"",
-				"UI: Customize Theme"
-			],
-			[
 				"mat",
 				"Material Theme: Extras"
-			],
-			[
-				"remove",
-				"Package Control: Remove Package"
 			],
 			[
 				"theme",
@@ -748,7 +783,7 @@
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 27.2
 	},
 	"find_in_files":
 	{
@@ -809,18 +844,19 @@
 				{
 					"buffer": 0,
 					"file": "blog/templates/blog/phisics_task.html",
+					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2892,
+						"buffer_size": 2760,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								98,
-								98
+								891,
+								891
 							]
 						],
 						"settings":
@@ -830,12 +866,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										904,
+										905
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"region.orangish"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										864,
+										865
+									]
 								},
 								"unmatched":
 								{
@@ -843,21 +894,6 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -868,36 +904,51 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
 							],
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"tab_size": 4,
@@ -907,14 +958,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"stack_multiselect": false,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "blog/templates/blog/it_task.html",
-					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
@@ -949,61 +999,61 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
-								"bh_default_content"
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
 							],
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"tab_size": 4,
@@ -1013,7 +1063,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"stack_multiselect": false,
 					"type": "text"
 				},
@@ -1272,7 +1322,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 27.2
 	},
 	"input":
 	{
@@ -1301,6 +1351,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.GitSavvy":
+	{
+		"height": 331.0
+	},
 	"output.SublimeLinter":
 	{
 		"height": 0.0
@@ -1321,7 +1375,7 @@
 	"project": "mysite.sublime-project",
 	"replace":
 	{
-		"height": 52.8
+		"height": 51.2
 	},
 	"save_all_on_build": true,
 	"select_file":
