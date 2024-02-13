@@ -1,0 +1,14 @@
+{
+    "folders":
+    [
+        {
+            "follow_symlinks": true, // следовать по симв. ссылкам
+            "path": ".", // путь к проекту от текущего файла
+        }
+    ],
+    "settings":
+    {
+        // путь до интерпретатора
+        "python_interpreter": "C:/django/.venv/Scripts/python",
+    }
+}

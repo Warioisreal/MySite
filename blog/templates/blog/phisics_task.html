@@ -1,0 +1,82 @@
+{% extends 'basetask.html' %}
+{%load static %}
+{% block title_name %}
+EasyLearnZone - Phisics task
+{% endblock title_name %}
+{% block sbar %}
+      <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'><img src="{% static 'imajes/logo.png' %}" style="width: 27px; height: 27px; filter: invert(100%);"/></i>
+        <div class="logo_name">Programming</div>
+        <i class='bx bx-menu' id="btn"><img src="{% static 'imajes/3lines.png' %}" style="width: 27px; height: 27px;"/></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class='bx bx-search' style="width: 27px; padding-left: 1px; padding-top: 2px;"><img src="{% static 'imajes/loupe.png' %}" style="width: 27px; height: 27px;"/></i>
+          <input type="text" placeholder="Search...">
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="{% url 'posts' %}">
+            <i class='bx bx-user'><img src="{% static 'imajes/home.png' %}" /></i>
+            <span class="links_name">Home</span>
+          </a>
+          <span class="tooltip">Home</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-user'><img src="{% static 'imajes/book.png' %}" style="filter:invert(180);" /></i>
+            <span class="links_name">Авторские курсы</span>
+          </a>
+          <span class="tooltip">Авторские курсы</span>
+        </li>
+        <li>
+          <a href="{% url 'phisics' %}">
+            <i class='bx bx-user'><img src="{% static 'imajes/taskimg.png' %}" style="filter:invert(180);" /></i>
+            <span class="links_name">Список олимпиад</span>
+          </a>
+          <span class="tooltip">Список олимпиад</span>
+        </li>
+      </ul>
+{% endblock sbar %}
+{% block list%}
+    <li><span onclick="action(7)">7 класс</span>
+        <ul class="ul" id="7">
+            <li>Мармелад</li>
+            <li>Батончики</li>
+            <li>Ассорти</li>
+            <li>Карамель</li>
+        </ul>
+    </li>
+    <li><span onclick="action(8)">8 класс</span>
+        <ul class="ul" id="8">
+            <li>Мармелад</li>
+            <li>Батончики</li>
+            <li>Ассорти</li>
+            <li>Карамель</li>
+        </ul>
+    </li>
+    <li><span onclick="action(9)">9 класс</span>
+        <ul class="ul" id="9">
+            <li>Мармелад</li>
+            <li>Батончики</li>
+            <li>Ассорти</li>
+            <li>Карамель</li>
+        </ul>
+    </li>
+    <li><span onclick="action(10)">10 класс</span>
+        <ul class="ul" id="10">
+            <li>Мармелад</li>
+            <li>Батончики</li>
+            <li>Ассорти</li>
+            <li>Карамель</li>
+        </ul>
+    </li>
+    <li><span onclick="action(11)">11 класс</span>
+        <ul class="ul" id="11">
+            <li>Мармелад</li>
+            <li>Батончики</li>
+            <li>Ассорти</li>
+            <li>Карамель</li>
+        </ul>
+    </li>
+{% endblock list%}

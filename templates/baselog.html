@@ -1,0 +1,64 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <link rel="stylesheet" href="{% static 'css/stylelog.css' %}" />
+	    <title>EasyLearnZone - Login</title>
+	    <script src="{% static 'js/apphome.js' %}" defer></script>
+	    <link rel="website icon" type="jpg" href="{% static 'imajes/logo.png' %}">
+  	</head>
+  	<body>
+		<header class="header">
+            <ul class="nav">
+                <li class="text">
+                    <a class="href" href="{% url 'posts' %}">Home</a>
+                </li>
+                <li class="text">
+                    <a class="href" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="text">
+                    <a class="search-wrapper">
+				  		<input type="text" placeholder="Search" class="search-input" />
+				  		<button type="button" class="search-button">
+				    		<i class="ri-search-2-line"><img src="{% static 'imajes/loupe.png' %}" style="width: 20px; height: 20px;"/></i>
+				  		</button>
+					</a>
+                </li>
+            </ul>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="alert"{% endif %}>
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </header>
+	    <div class="background">
+	    	<div class="bubble-9 bubble-static"></div>
+	    </div>
+	    <section class="home">
+	    	<div class="preview">
+	    		<img src="{% static 'imajes/logo.png' %}" style="width: 60px; height: 60px; filter: invert(180);" />
+	    		<p>{%block name%}{%endblock name%} to EasyLearnZone</p>
+	    	</div>
+	      	<div class="wrapper">
+				<div class="form-container">
+                        <div class="form-inner">
+                            <form method="POST" class="login" value='login'>
+                                {% csrf_token %}
+								{%block form%}
+						      	{%endblock form%}
+                            </form>
+                        </div>
+                    </div>
+		    </div>
+
+			<main>
+		    </main>
+		</section>
+    </body>
+</html>

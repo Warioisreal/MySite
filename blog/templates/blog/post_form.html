@@ -1,0 +1,28 @@
+{% extends 'basepost.html' %}
+{%block title_name%}EazyLearnZone - {% if id %}Edit{% else %}New{% endif %} Post{%endblock title_name%}
+{% block content %}
+<div class="post-block">
+	<h1>{% if id %}Изменение поста{% else %}Новый пост{% endif %}</h1>
+	<section class="post-content">
+		<div class="background">
+			<form class="form-block" method="post" novalidate>
+				{% csrf_token %}
+				<div class="field">
+					<label for="id_title">Название</label>
+					<input type="text" name="title" cols="20" rows="1" maxlength="120" required id="id_title">
+				</div>
+				<div class="field">
+					<label for="id_content">Ссылка</label>
+					<input type="text" name="content" cols="20" rows="1" required id="id_content">
+				</div>
+				<div class="field">
+					<label for="id_index">Индекс</label>
+					<input type="text" name="index" maxlength="1" required id="id_index">
+				</div>
+				<i>Возможные значения индекса:<br>p - физика<br>i - программирование<br>m - математика</i>
+				<input type="submit" value="Save" />
+			</form>
+		</div>
+	</section>
+</div>
+{% endblock content %}

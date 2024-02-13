@@ -1,0 +1,25 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/style_task.css' %}" />
+        <title>{% block title_name %}{% endblock title_name %}</title>
+        <script src="{% static 'js/app.js' %}" defer></script>
+        <link rel="website icon" href="{% static 'imajes/logo.png' %}" />
+    </head>
+    <body>
+        <div class="background"></div>
+		<div class="sidebar">
+	      {%block sbar%}
+	      {%endblock sbar%}
+	    </div>
+        <section class="block_content">
+            <ul class="list" id="list">
+            	{% block list%}
+            	{% endblock list%}
+            </ul>
+        </section>
+    </body>
+</html>

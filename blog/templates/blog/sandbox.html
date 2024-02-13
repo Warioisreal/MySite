@@ -1,0 +1,32 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style_sandbox.css' %}" />
+    <!-- <script src="{% static 'js/app1.js' %}" defer></script> -->
+    <link rel="website icon" type="jpg" href="{% static 'imajes/logo.png' %}">
+    <title>EasyLearnZone - Sandbox</title>
+  </head>
+  <body>
+    <div class="main-content">
+      <section class="home">
+        <div class="backgroundimg"></div>
+        <div class="input_block">
+            <div class="background">
+                <form action="/" method="POST" class="input_box">
+                	{% csrf_token %}
+				        </form>
+            </div>
+        </div>
+		<div class="output_block">
+            <div class="background">
+                <p></p>
+                <a href="#"></a>
+            </div>
+        </div>
+    </section>
+    </div>
+  </body>
+</html>

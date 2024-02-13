@@ -1,0 +1,24 @@
+{% extends 'baselog.html' %}
+{%block name%}Login{%endblock name%}
+{% block form %}
+<div class="field">
+    <label for="id_username">USERNAME</label>
+    <input type="text" name="username" maxlength="65" id="id_username"  required>
+    <i class="fa-solid_fa-login_fa-username"></i>
+</div>
+<div class="field">
+    <label for="id_username">PASSWORD</label>
+    <input type="password" name="password" maxlength="65" id="id_password"  required>
+    <i class="fa-solid_fa-login_fa-username"></i>
+</div>
+<div class="pass-link">
+  	<a href="#">Forgot password?<p>-></p></a>
+    <p>-></p>
+</div>
+<div class="btn">
+    <button class="button" type="submit" value="Login">Login</button>
+</div>
+<div class="pass-link">
+  	<a href="{% url 'register' %}">Don't have an account?<p>-></p></a>
+</div>
+{% endblock form %}

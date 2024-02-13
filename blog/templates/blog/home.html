@@ -1,0 +1,128 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/stylehome.css' %}" />
+        <title>EasyLearnZone</title>
+        <script src="{% static 'js/apphome.js' %}" defer></script>
+        <link rel="website icon" href="{% static 'imajes/logo.png' %}" />
+    </head>
+
+    <body>
+        <header class="header">
+            <ul class="nav">
+                <li class="imj">
+                    <a href="{% url 'posts' %}"><img src="{% static 'imajes/logo.png' %}" style="width: 50px; height: 50px; filter: invert(180);" /></a>
+                </li>
+                <li class="text">
+                    <a class="href" href="{% url 'about' %}">О нас</a>
+                </li>
+                <li class="text">
+                    <a class="href" href="#">Сервисы</a>
+                </li>
+                <li class="tasks">Задачи
+                    <div class="task_block">
+                        <a href="#">Программирование</a>
+                        <a href="#">Физика</a>
+                        <a href="#">Математика</a>
+                    </div>
+                </li>
+            </ul>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="alert"{% endif %}>
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <div class="user_info">
+                {% if request.user.is_authenticated %}
+                    <p>{{ request.user.username }}</p>
+                    <a class="linkout" href="{% url 'logout' %}"><img src="{% static 'imajes/logout.png' %}" style="width: 18px; height: 15px; filter: invert(180);" /></a>
+                {% else %}
+                    <a class="linkin" href="{% url 'login' %}">Login</a>
+                {% endif %}
+            </div>
+        </header>
+        <div class="background">
+          <div class="bubble-1 bubble-container bubble-animation-x">
+            <div class="bubble-large bubble-animation-y"></div>
+          </div>
+
+          <div class="bubble-2 bubble-container bubble-animation-x">
+            <div class="bubble-large bubble-animation-y"></div>
+          </div>
+
+          <div class="bubble-3 bubble-container bubble-animation-x">
+            <div class="bubble-large bubble-animation-y"></div>
+          </div>
+
+          <div class="bubble-4 bubble-container bubble-animation-x">
+            <div class="bubble-small bubble-animation-y"></div>
+          </div>
+
+           <div class="bubble-5 bubble-container bubble-animation-x">
+            <div class="bubble-small bubble-animation-y"></div>
+          </div>
+
+           <div class="bubble-6 bubble-container bubble-animation-x">
+            <div class="bubble-small bubble-animation-y"></div>
+          </div>
+
+          <div class="bubble-7 bubble-container bubble-animation-x">
+            <div class="bubble-small bubble-animation-y"></div>
+          </div>
+
+          <div class="bubble-8 bubble-container bubble-animation-x">
+            <div class="bubble-small bubble-animation-y"></div>
+          </div>
+
+          <div class="bubble-9 bubble-static"></div>
+
+        </div>
+        <section class="home">
+            <div class="wrapper">
+                    <div class="card">
+                        <a {% if request.user.is_authenticated %}
+                            href="{% url 'it' %}"
+                            {% else %}
+                            href="{% url 'login' %}"
+                            {% endif %}>
+                            <div class="background">
+                                <p>def f(a):<br>return a</p>
+                            </div>
+                            <div class="card-overlay">Программирование</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a {%if request.user.is_authenticated %}
+                            href="{% url 'phisics' %}"
+                            {%else%}
+                            href="{% url 'login' %}"
+                            {%endif%}>
+                            <div class="background">
+                                <p>E = mc²</p>
+                            </div>
+                            <div class="card-overlay">Физика</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a {%if request.user.is_authenticated %}
+                            href="{% url 'math' %}"
+                            {%else%}
+                            href="{% url 'login' %}"
+                            {%endif%}>
+                            <div class="background">
+                                <p>a² + b² = c²</p>
+                            </div>
+                            <div class="card-overlay">Математика</div>
+                        </a>
+                    </div>
+            </div>
+        </section>
+    </body>
+</html>
