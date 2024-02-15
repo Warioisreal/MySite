@@ -3,518 +3,34 @@
 	{
 		"selected_items":
 		[
-			[
-				"phi",
-				"phisics_task.html"
-			],
-			[
-				"fel",
-				"flex-direction"
-			],
-			[
-				"c",
-				"childrenList"
-			],
-			[
-				"fle",
-				"flex-direction"
-			],
-			[
-				"l",
-				"linkout"
-			],
-			[
-				"bor",
-				"border"
-			],
-			[
-				"fo",
-				"font-weight"
-			],
-			[
-				"flex-",
-				"flex-direction"
-			],
-			[
-				"mar",
-				"margin-top"
-			],
-			[
-				"for",
-				"form-inner"
-			],
-			[
-				"ma",
-				"margin-bottom"
-			],
-			[
-				"col",
-				"column-gap"
-			],
-			[
-				"spa",
-				"space-evenly"
-			],
-			[
-				"fl",
-				"flex-direction"
-			],
-			[
-				"tr",
-				"transition"
-			],
-			[
-				"bo",
-				"border"
-			],
-			[
-				"ba",
-				"background-color"
-			],
-			[
-				"box",
-				"box-shadow"
-			],
-			[
-				"back",
-				"background"
-			],
-			[
-				"tra",
-				"transition"
-			],
-			[
-				"tran",
-				"transition"
-			],
-			[
-				"ta",
-				"task_block"
-			],
-			[
-				"te",
-				"text-align"
-			],
-			[
-				"font",
-				"font-size"
-			],
-			[
-				"b",
-				"block"
-			],
-			[
-				"rg",
-				"rgb()"
-			],
-			[
-				"margin",
-				"margin-left"
-			],
-			[
-				"flex",
-				"flex-direction"
-			],
-			[
-				"he",
-				"header"
-			],
-			[
-				"backgroun",
-				"background-image"
-			],
-			[
-				"fon",
-				"font-size"
-			],
-			[
-				"f",
-				"field"
-			],
-			[
-				"in",
-				"initial"
-			],
-			[
-				"box-s",
-				"box-shadow"
-			],
-			[
-				"post",
-				"post-content"
-			],
-			[
-				"m",
-				"margin-top"
-			],
-			[
-				"clor",
-				"color"
-			],
-			[
-				"h",
-				"h2"
-			],
-			[
-				"fil",
-				"filter"
-			],
-			[
-				"bac",
-				"background-color"
-			],
-			[
-				"reg",
-				"Register"
-			],
-			[
-				"background-",
-				"background-color"
-			],
-			[
-				"ca",
-				"card-overlay"
-			],
-			[
-				"t",
-				"top"
-			],
-			[
-				"i",
-				"img"
-			],
-			[
-				"si",
-				"sign_in"
-			],
-			[
-				"w",
-				"font-weight"
-			],
-			[
-				"border",
-				"border-color"
-			],
-			[
-				"tex",
-				"text-transform"
-			],
-			[
-				"ho",
-				"hover"
-			],
-			[
-				"pass",
-				"password"
-			],
-			[
-				"s",
-				"scaleX()"
-			],
-			[
-				"sca",
-				"scaleZ()"
-			],
-			[
-				"pad",
-				"padding-right"
-			],
-			[
-				"tar",
-				"transform"
-			],
-			[
-				"au",
-				"autocomplete"
-			],
-			[
-				"padd",
-				"padding-left"
-			],
-			[
-				"backd",
-				"backdrop-filter"
-			],
-			[
-				"fi",
-				"filter"
-			],
-			[
-				"err",
-				"error"
-			],
-			[
-				"re",
-				"required"
-			],
-			[
-				"bx",
-				"bx-menu-alt-right"
-			],
-			[
-				"li",
-				"line-height"
-			],
-			[
-				"pos",
-				"pointer-events"
-			],
-			[
-				"al",
-				"alt"
-			],
-			[
-				"po",
-				"position"
-			],
-			[
-				"mi",
-				"min-width"
-			],
-			[
-				"ali",
-				"align-items"
-			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "{% extends 'basetask.html' %}\n{%load static %}\n{% block title_name %}\nEasyLearnZone - Phisics task\n{% endblock title_name %}\n{% block sbar %}\n      <div class=\"logo-details\">\n        <i class='bx bxl-c-plus-plus icon'><img src=\"{% static 'imajes/logo.png' %}\" style=\"width: 27px; height: 27px; filter: invert(100%);\"/></i>\n        <div class=\"logo_name\">Programming</div>\n        <i class='bx bx-menu' id=\"btn\"><img src=\"{% static 'imajes/3lines.png' %}\" style=\"width: 27px; height: 27px;\"/></i>\n      </div>\n      <ul class=\"nav-list\">\n        <li>\n          <i class='bx bx-search' style=\"width: 27px; padding-left: 1px; padding-top: 2px;\"><img src=\"{% static 'imajes/loupe.png' %}\" style=\"width: 27px; height: 27px;\"/></i>\n          <input type=\"text\" placeholder=\"Search...\">\n          <span class=\"tooltip\">Search</span>\n        </li>\n        <li>\n          <a href=\"{% url 'posts' %}\">\n          </a>\n          <span class=\"tooltip\">Home</span>\n        </li>\n        <li>\n          <a href=\"#\">\n            <i class='bx bx-user'><img src=\"{% static 'imajes/book.png' %}\" style=\"filter:invert(180);\" /></i>\n            <span class=\"links_name\">Авторские курсы</span>\n          </a>\n          <span class=\"tooltip\">Авторские курсы</span>\n        </li>\n        <li>\n          <a href=\"{% url 'phisics' %}\">\n            <i class='bx bx-user'><img src=\"{% static 'imajes/taskimg.png' %}\" style=\"filter:invert(180);\" /></i>\n            <span class=\"links_name\">Список олимпиад</span>\n          </a>\n          <span class=\"tooltip\">Список олимпиад</span>\n        </li>\n      </ul>\n{% endblock sbar %}\n{% block list%}\n    <li><span onclick=\"action(7)\">7 класс</span>\n        <ul class=\"ul\" id=\"7\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n    <li><span onclick=\"action(8)\">8 класс</span>\n        <ul class=\"ul\" id=\"8\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n    <li><span onclick=\"action(9)\">9 класс</span>\n        <ul class=\"ul\" id=\"9\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n    <li><span onclick=\"action(10)\">10 класс</span>\n        <ul class=\"ul\" id=\"10\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n    <li><span onclick=\"action(11)\">11 класс</span>\n        <ul class=\"ul\" id=\"11\">\n            <li>Мармелад</li>\n            <li>Батончики</li>\n            <li>Ассорти</li>\n            <li>Карамель</li>\n        </ul>\n    </li>\n{% endblock list%}",
-			"file": "blog/templates/blog/phisics_task.html",
-			"file_size": 3214,
-			"file_write_time": 133521999029009937,
+			"file": "blog/templates/blog/home.html",
 			"settings":
 			{
-				"buffer_size": 2760,
+				"buffer_size": 5169,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			},
 			"undo_stack":
 			[
-				[
-					3,
-					4,
-					"left_delete",
-					null,
-					"BAAAAHMFAAAAAAAAcwUAAAAAAAA0AQAAPGxpPgogICAgICAgICAgPGEgaHJlZj0ieyUgdXJsICdzYW5kYm94JyAlfSI+CiAgICAgICAgICAgIDxpIGNsYXNzPSdieCBieC11c2VyJz48aW1nIHNyYz0ieyUgc3RhdGljICdpbWFqZXMvaXRpbWcxLnBuZycgJX0iIHN0eWxlPSJmaWx0ZXI6aW52ZXJ0KDE4MCk7IiAvPjwvaT4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImxpbmtzX25hbWUiPtCf0LXRgdC+0YfQvdC40YbQsDwvc3Bhbj4KICAgICAgICAgIDwvYT4KICAgICAgICAgIDxzcGFuIGNsYXNzPSJ0b29sdGlwIj7Qn9C10YHQvtGH0L3QuNGG0LA8L3NwYW4+CiAgICAgICAgPC9saT5vBQAAAAAAAG8FAAAAAAAABAAAACAgICBrBQAAAAAAAGsFAAAAAAAABAAAACAgICBqBQAAAAAAAGoFAAAAAAAAAQAAAAo",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAHMFAAAAAAAAlQYAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					7,
-					2,
-					"left_delete",
-					null,
-					"AgAAAJQFAAAAAAAAlAUAAAAAAAABAAAAdJMFAAAAAAAAkwUAAAAAAAABAAAAaQ",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJUFAAAAAAAAlQUAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					8,
-					1,
-					"insert",
-					{
-						"characters": "phi"
-					},
-					"AwAAAJMFAAAAAAAAlAUAAAAAAAAAAAAAlAUAAAAAAACVBQAAAAAAAAAAAACVBQAAAAAAAJYFAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJMFAAAAAAAAkwUAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					9,
-					1,
-					"insert_dimensions",
-					null,
-					"AgAAAJMFAAAAAAAAkwUAAAAAAAADAAAAcGhpkwUAAAAAAACfBQAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJYFAAAAAAAAlgUAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					10,
-					5,
-					"left_delete",
-					null,
-					"BQAAAJ4FAAAAAAAAngUAAAAAAAABAAAAbJ0FAAAAAAAAnQUAAAAAAAABAAAAbZwFAAAAAAAAnAUAAAAAAAABAAAAdJsFAAAAAAAAmwUAAAAAAAABAAAAaJoFAAAAAAAAmgUAAAAAAAABAAAALg",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJ8FAAAAAAAAnwUAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					13,
-					1,
-					"insert",
-					{
-						"characters": "Phisi"
-					},
-					"BgAAAFYAAAAAAAAAVwAAAAAAAAAAAAAAVwAAAAAAAABXAAAAAAAAAAsAAABQcm9ncmFtbWluZ1cAAAAAAAAAWAAAAAAAAAAAAAAAWAAAAAAAAABZAAAAAAAAAAAAAABZAAAAAAAAAFoAAAAAAAAAAAAAAFoAAAAAAAAAWwAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGEAAAAAAAAAVgAAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					14,
-					1,
-					"insert",
-					{
-						"characters": "cs"
-					},
-					"AgAAAFsAAAAAAAAAXAAAAAAAAAAAAAAAXAAAAAAAAABdAAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAFsAAAAAAAAAWwAAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					15,
-					1,
-					"insert",
-					{
-						"characters": " yas"
-					},
-					"BAAAAF0AAAAAAAAAXgAAAAAAAAAAAAAAXgAAAAAAAABfAAAAAAAAAAAAAABfAAAAAAAAAGAAAAAAAAAAAAAAAGAAAAAAAAAAYQAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAF0AAAAAAAAAXQAAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					16,
-					1,
-					"insert",
-					{
-						"characters": "k"
-					},
-					"AQAAAGEAAAAAAAAAYgAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGEAAAAAAAAAYQAAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					17,
-					4,
-					"left_delete",
-					null,
-					"BAAAAGEAAAAAAAAAYQAAAAAAAAABAAAAa2AAAAAAAAAAYAAAAAAAAAABAAAAc18AAAAAAAAAXwAAAAAAAAABAAAAYV4AAAAAAAAAXgAAAAAAAAABAAAAeQ",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGIAAAAAAAAAYgAAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					18,
-					1,
-					"insert",
-					{
-						"characters": "task"
-					},
-					"BAAAAF4AAAAAAAAAXwAAAAAAAAAAAAAAXwAAAAAAAABgAAAAAAAAAAAAAABgAAAAAAAAAGEAAAAAAAAAAAAAAGEAAAAAAAAAYgAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAF4AAAAAAAAAXgAAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					6,
-					1,
-					"left_delete",
-					null,
-					"AQAAAHsDAAAAAAAAewMAAAAAAACEAAAACiAgICAgICAgICAgIDxpIGNsYXNzPSdieCBieC11c2VyJz48aW1nIHNyYz0ieyUgc3RhdGljICdpbWFqZXMvaG9tZS5wbmcnICV9IiAvPjwvaT4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImxpbmtzX25hbWUiPkhvbWU8L3NwYW4+",
-					"AQAAAAAAAAABAAAAewMAAAAAAAD/AwAAAAAAAAAAAAAAAPC/"
-				]
 			]
 		},
 		{
-			"file": "blog/templates/blog/it_task.html",
+			"file": "manage.py",
 			"settings":
 			{
-				"buffer_size": 3190,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			},
-			"undo_stack":
-			[
-				[
-					7,
-					1,
-					"insert",
-					{
-						"characters": " task"
-					},
-					"BQAAAGEAAAAAAAAAYgAAAAAAAAAAAAAAYgAAAAAAAABjAAAAAAAAAAAAAABjAAAAAAAAAGQAAAAAAAAAAAAAAGQAAAAAAAAAZQAAAAAAAAAAAAAAZQAAAAAAAABmAAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGEAAAAAAAAAYQAAAAAAAAAAAAAAAADwvw"
-				]
-			]
-		},
-		{
-			"file": "blog/templates/blog/phisics.html",
-			"settings":
-			{
-				"buffer_size": 3053,
-				"encoding": "UTF-8",
+				"buffer_size": 662,
 				"line_ending": "Windows"
 			}
-		},
-		{
-			"file": "blog/templates/blog/math_task.html",
-			"settings":
-			{
-				"buffer_size": 2886,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			},
-			"undo_stack":
-			[
-				[
-					3,
-					4,
-					"left_delete",
-					null,
-					"BAAAAHMFAAAAAAAAcwUAAAAAAAA0AQAAPGxpPgogICAgICAgICAgPGEgaHJlZj0ieyUgdXJsICdzYW5kYm94JyAlfSI+CiAgICAgICAgICAgIDxpIGNsYXNzPSdieCBieC11c2VyJz48aW1nIHNyYz0ieyUgc3RhdGljICdpbWFqZXMvaXRpbWcxLnBuZycgJX0iIHN0eWxlPSJmaWx0ZXI6aW52ZXJ0KDE4MCk7IiAvPjwvaT4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImxpbmtzX25hbWUiPtCf0LXRgdC+0YfQvdC40YbQsDwvc3Bhbj4KICAgICAgICAgIDwvYT4KICAgICAgICAgIDxzcGFuIGNsYXNzPSJ0b29sdGlwIj7Qn9C10YHQvtGH0L3QuNGG0LA8L3NwYW4+CiAgICAgICAgPC9saT5vBQAAAAAAAG8FAAAAAAAABAAAACAgICBrBQAAAAAAAGsFAAAAAAAABAAAACAgICBqBQAAAAAAAGoFAAAAAAAAAQAAAAo",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAHMFAAAAAAAAlQYAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					6,
-					2,
-					"left_delete",
-					null,
-					"AgAAAJQFAAAAAAAAlAUAAAAAAAABAAAAdJMFAAAAAAAAkwUAAAAAAAABAAAAaQ",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJUFAAAAAAAAlQUAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					7,
-					1,
-					"insert",
-					{
-						"characters": "math"
-					},
-					"BAAAAJMFAAAAAAAAlAUAAAAAAAAAAAAAlAUAAAAAAACVBQAAAAAAAAAAAACVBQAAAAAAAJYFAAAAAAAAAAAAAJYFAAAAAAAAlwUAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAJMFAAAAAAAAkwUAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					10,
-					1,
-					"insert",
-					{
-						"characters": "Math"
-					},
-					"BQAAAFYAAAAAAAAAVwAAAAAAAAAAAAAAVwAAAAAAAABXAAAAAAAAAAsAAABQcm9ncmFtbWluZ1cAAAAAAAAAWAAAAAAAAAAAAAAAWAAAAAAAAABZAAAAAAAAAAAAAABZAAAAAAAAAFoAAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAGEAAAAAAAAAVgAAAAAAAAAAAAAAAADwvw"
-				],
-				[
-					11,
-					1,
-					"insert",
-					{
-						"characters": " task"
-					},
-					"BQAAAFoAAAAAAAAAWwAAAAAAAAAAAAAAWwAAAAAAAABcAAAAAAAAAAAAAABcAAAAAAAAAF0AAAAAAAAAAAAAAF0AAAAAAAAAXgAAAAAAAAAAAAAAXgAAAAAAAABfAAAAAAAAAAAAAAA",
-					"AwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAFoAAAAAAAAAWgAAAAAAAAAAAAAAAADwvw"
-				]
-			]
 		}
 	],
-	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system": "",
 	"build_system_choices":
 	[
-		[
-			[
-				[
-					"Packages/Python/Python.sublime-build",
-					""
-				],
-				[
-					"Packages/Python/Python.sublime-build",
-					"Syntax Check"
-				],
-				[
-					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
-					""
-				]
-			],
-			[
-				"Packages/Python/Python.sublime-build",
-				"Syntax Check"
-			]
-		]
 	],
 	"build_varint": "",
 	"command_palette":
@@ -524,15 +40,67 @@
 		"selected_items":
 		[
 			[
-				"init",
-				"git: init"
+				"run ",
+				"Django: Run Server"
 			],
 			[
-				"",
-				"BracketHighlighter: Documentation"
+				"in",
+				"Package Control: Install Package"
 			],
 			[
-				"push",
+				"run ser",
+				"Django: Run Server"
+			],
+			[
+				"run s",
+				"Django: Run Server"
+			],
+			[
+				"Django:ru",
+				"Django: Run Server"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"django",
+				"Django: Help"
+			],
+			[
+				"run",
+				"Django: Run Custom Server"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: pa",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: packages",
+				"Package Control: List Packages"
+			],
+			[
+				"sta",
+				"git: quick stage"
+			],
+			[
+				"pus",
 				"git: push"
 			],
 			[
@@ -540,126 +108,25 @@
 				"git: quick stage"
 			],
 			[
-				"remove",
-				"git: remote remove"
-			],
-			[
-				"rem",
+				"remo",
 				"git: remote add"
 			],
 			[
-				"remote",
-				"git: remote add"
+				"init",
+				"git: init"
 			],
 			[
-				"package",
-				"Package Control: Install Package"
-			],
-			[
-				"run",
-				"Django: Run Server"
-			],
-			[
-				"re",
+				"Package Control: re",
 				"Package Control: Remove Package"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
-			],
-			[
-				"i",
-				"Package Control: Install Package"
-			],
-			[
-				"clea",
-				"CleanCSS: Clean current file"
-			],
-			[
-				"in",
-				"Package Control: Install Package"
-			],
-			[
-				"ru",
-				"Set Syntax: Rust"
-			],
-			[
-				"ter",
-				"Terminal: Open in project folder"
-			],
-			[
-				"r",
-				"Django: Run Server"
-			],
-			[
-				"mat",
-				"Material Theme: Extras"
-			],
-			[
-				"theme",
-				"Material Theme: Activate theme"
-			],
-			[
-				"the",
-				"Material Theme: Extras"
-			],
-			[
-				"term",
-				"Terminal: Open in project folder"
-			],
-			[
-				"package control inst",
-				"Package Control: Install Package"
-			],
-			[
-				"packe",
-				"Package Control: List Packages"
-			],
-			[
-				"te",
-				"Terminal: Open"
-			],
-			[
-				"bar",
-				"View: Toggle Side Bar"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
-				"colo",
-				"Colorsublime: Install Theme"
-			],
-			[
-				"test",
-				"Django: Test"
-			],
-			[
-				"set syn py",
-				"Set Syntax: Python"
-			],
-			[
-				"packege con",
-				"Package Control: List Packages"
-			],
-			[
-				"list",
-				"Package Control: List Packages"
-			],
-			[
-				"Install Package Control",
-				"Package Control: Install Package"
 			]
 		],
 		"width": 0.0
 	},
 	"console":
 	{
-		"height": 131.199996948,
+		"height": 0.0,
 		"history":
 		[
-			"import urllib.request,os,hashlib; h = ‘2915d1851351e5ee549c20394736b442’ + ‘8bc59f460fa1548d1514676163dafc88’; pf = ‘Package Control.sublime-package’; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( ‘http://sublime.wbond.net/’ + pf.replace(‘ ‘, ‘%20’)).read(); dh = hashlib.sha256(by).hexdigest(); print(‘Error validating download (got %s instead of %s), please try manual install’ % (dh, h)) if dh != h else open(os.path.join( ipp, pf), ‘wb’ ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -675,119 +142,32 @@
 	[
 		"/C/django/MySite",
 		"/C/django/MySite/blog",
-		"/C/django/MySite/blog/__pycache__",
 		"/C/django/MySite/blog/templates",
 		"/C/django/MySite/blog/templates/blog",
 		"/C/django/MySite/MySite",
-		"/C/django/MySite/static",
-		"/C/django/MySite/static/css",
-		"/C/django/MySite/static/imajes",
-		"/C/django/MySite/static/js",
-		"/C/django/MySite/templates",
-		"/C/django/MySite/users",
-		"/C/django/MySite/users/templates",
-		"/C/django/MySite/users/templates/users"
+		"/C/django/MySite/static"
 	],
 	"file_history":
 	[
-		"/C/django/MySite/blog/templates/blog/phisics.html",
-		"/C/django/MySite/blog/templates/blog/math.html",
-		"/C/django/MySite/blog/templates/blog/phisics_task.html",
-		"/C/django/MySite/blog/templates/blog/math_task.html",
-		"/C/django/MySite/static/css/stylehome.css",
-		"/C/django/MySite/static/css/style_task.css",
-		"/C/django/MySite/templates/basetask.html",
-		"/C/django/MySite/blog/templates/blog/it_task.html",
-		"/C/django/MySite/blog/templates/blog/it.html",
-		"/C/django/MySite/static/css/style1.css",
-		"/C/django/MySite/static/js/app.js",
-		"/C/django/MySite/templates/base.html",
-		"/C/django/MySite/static/js/app1.js",
-		"/C/django/MySite/static/js/apphome.js",
-		"/C/django/MySite/static/css/stylepost.css",
-		"/C/django/MySite/templates/basepost.html",
-		"/C/django/MySite/static/css/stylelog.css",
-		"/C/django/MySite/templates/baselog.html",
-		"/C/django/MySite/blog/templates/blog/home.html",
-		"/C/django/MySite/users/templates/users/register.html",
-		"/C/django/MySite/users/templates/users/login.html",
-		"/C/django/MySite/blog/templates/blog/post_confirm_delete.html",
-		"/C/django/MySite/blog/templates/blog/post_form.html",
+		"/C/Users/Wario/AppData/Roaming/Sublime Text/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Wario/AppData/Roaming/Sublime Text/Packages/User/Preferences.sublime-settings",
 		"/C/django/MySite/blog/templates/blog/about.html",
-		"/C/django/MySite/templates/base2.html",
-		"/C/django/MySite/templates/base1.html",
-		"/C/Users/Дмитрий/AppData/Roaming/Sublime Text/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
-		"/C/django/MySite/blog/templates/blog/rating_sistem.txt",
-		"/C/django/MySite/static/css/style.css",
-		"/C/django/MySite/static/css/style_sandbox.css",
-		"/C/django/MySite/static/js/app2.js",
-		"/C/django/MySite/users/views.py",
-		"/C/django/MySite/blog/views.py",
-		"/C/django/MySite/users/forms.py",
-		"/C/django/MySite/blog/urls.py",
-		"/C/django/MySite/blog/models.py",
-		"/C/django/MySite/blog/templates/blog/ma",
-		"/C/django/MySite/blog/templates/blog/ph",
-		"/C/django/MySite/templates/base_post.html",
-		"/C/django/MySite/blog/templates/blog/sandbox.html",
-		"/C/django/MySite/blog/templates/blog/html.txt",
-		"/C/django/MySite/blog/templates/blog/css.txt",
-		"/C/django/MySite/blog/templates/blog/post_create_form.html",
-		"/C/django/MySite/templatetags/auth_extras.py",
-		"/C/django/MySite/templatetags/__init__.py",
-		"/C/django/MySite/manage.py",
-		"/C/django/MySite/blog/forms.py",
-		"/C/django/MySite/blog/admin.py",
-		"/C/django/MySite/blog/migrations/0002_task.py",
-		"/C/django/MySite/blog/templates/blog/post_create_form.txt",
-		"/C/django/MySite/users/models.py",
-		"/C/django/MySite/users/urls.py",
-		"/C/django/MySite/static/js/script.js",
-		"/C/django/MySite/static/imajes/home.png",
-		"/C/django/MySite/static/imajes/home.jpg",
-		"/C/django/MySite/static/css/styleph.css",
-		"/C/django/MySite/MySite/urls.py",
-		"/C/django/MySite/users/templates/users/login-register.html",
-		"/C/django/MySite/blog/templates/blog/moodle.html",
-		"/C/django/MySite/blog/templates/blog/informatics.html",
-		"/C/django/.venv/Lib/site-packages/django/forms/models.py",
-		"/C/django/MySite/static/css/styletodo.css",
-		"/C/django/MySite/blog/templates/blog/hometodo.html",
-		"/C/django/MySite/templates/basetodo.html",
-		"/C/django/MySite/todo/views.py",
-		"/C/django/MySite/MySite/settings.py",
-		"/C/django/MySite/todo/urls.py",
-		"/C/django/MySite/todo/templates/todo/hometodo.html",
-		"/C/django/MySite/blog/templates/blog/base.html",
-		"/C/django/MySite/blog/migrations/0001_initial.py",
-		"/C/django/MySite/blog/apps.py",
-		"/C/django/MySite/blog/__init__.py",
-		"/C/django/MySite/templates/about.html",
-		"/C/django/MySite/users/templates/users/base.html",
-		"/C/django/MySite/blog/templates/blog/main.html",
-		"/C/django/MySite/users/static/users/base.css",
-		"/C/django/MySite/users/static/users/base.html",
-		"/C/django/MySite/users/apps.py",
-		"/C/django/MySite/users/form.py",
-		"/C/django/MySite/blog/templates/base.html",
-		"/C/django/MySite/blog/templates/blog/Sign-Up.html",
-		"/C/django/MySite/blog/templates/blog/Login.html",
-		"/C/django/MySite/blog/templates/blog/Login.httml",
-		"/C/django/MySite/blog/templates/blog/Sign-Up",
-		"/C/django/MySite/blog/static/blog/main.css",
-		"/C/django/MySite/mysite.sublime-project",
-		"/C/django/MySite/blog/templates/blog/contacts.html",
-		"/C/django/MySite/db.sqlite3",
-		"/C/django/.venv/Scripts/django-admin.exe",
-		"/C/django/MySite/MySite/__init__.py"
+		"/C/Users/Wario/AppData/Roaming/Sublime Text/Installed Packages/Paraiso Color Scheme.sublime-package",
+		"/C/django/MySite/blog/templates/blog/home.html",
+		"/C/Users/Wario/AppData/Roaming/Sublime Text/Packages/User/Mariana.sublime-color-scheme",
+		"/C/Users/Wario/AppData/Roaming/Sublime Text/Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+		"/C/django/MySite/blog/templates/blog/math.html",
+		"/C/django/MySite/blog/templates/blog/math_task.html",
+		"/C/django/MySite/blog/templates/blog/it.html",
+		"/C/django/MySite/blog/templates/blog/it_task.html"
 	],
 	"find":
 	{
-		"height": 27.2
+		"height": 0.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 103.199996948,
 		"where_history":
 		[
 		]
@@ -797,29 +177,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"text",
-			"back",
-			"sear",
-			"user",
-			"hover",
-			"sidebar li i",
-			"sidebar i",
-			"link",
-			">/', ",
-			"id=\"login\" ",
-			"login-username",
-			"Invalid username or password",
-			"login",
-			"form",
-			"up_label",
-			"input",
-			"curs",
-			"light",
-			"title-te",
-			"login",
-			"title-text",
-			"blur",
-			"input["
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -843,218 +200,23 @@
 			[
 				{
 					"buffer": 0,
-					"file": "blog/templates/blog/phisics_task.html",
-					"selected": true,
+					"file": "blog/templates/blog/home.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2760,
+						"buffer_size": 5169,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								891,
-								891
+								300,
+								300
 							]
 						],
 						"settings":
 						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										904,
-										905
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/tag.png",
-										"region.orangish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										864,
-										865
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "blog/templates/blog/it_task.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3190,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								102,
-								102
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -1068,39 +230,15 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "blog/templates/blog/phisics.html",
-					"semi_transient": false,
+					"buffer": 1,
+					"file": "manage.py",
+					"selected": true,
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 3053,
+						"buffer_size": 662,
 						"regions":
 						{
-							"col_FFFFFFFF":
-							{
-								"flags": 16,
-								"regions":
-								[
-									[
-										1917,
-										1921
-									]
-								],
-								"scope": "col_FFFFFFFF"
-							},
-							"col_FFFFFFFF_icon":
-							{
-								"flags": 16,
-								"icon": "Packages/User/Color Highlight.cache/col_FFFFFFFF_circle.png",
-								"regions":
-								[
-									[
-										1887,
-										1887
-									]
-								],
-								"scope": "col_gutter"
-							}
 						},
 						"selection":
 						[
@@ -1111,201 +249,7 @@
 						],
 						"settings":
 						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										24,
-										25
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										0,
-										1
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
-							],
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 428.8,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "blog/templates/blog/math_task.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2886,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								95,
-								95
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
-							],
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -1313,7 +257,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"stack_multiselect": false,
 					"type": "text"
 				}
@@ -1322,11 +266,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.2
+		"height": 0.0
 	},
 	"input":
 	{
-		"height": 71.6
+		"height": 40.0
 	},
 	"layout":
 	{
@@ -1353,21 +297,13 @@
 	"menu_visible": true,
 	"output.GitSavvy":
 	{
-		"height": 331.0
+		"height": 273.0
 	},
 	"output.SublimeLinter":
 	{
 		"height": 0.0
 	},
-	"output.exec":
-	{
-		"height": 144.399993896
-	},
 	"output.find_results":
-	{
-		"height": 0.0
-	},
-	"output.mdpopups":
 	{
 		"height": 0.0
 	},
@@ -1375,7 +311,7 @@
 	"project": "mysite.sublime-project",
 	"replace":
 	{
-		"height": 51.2
+		"height": 0.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1389,21 +325,21 @@
 	},
 	"select_project":
 	{
-		"height": 500.8,
+		"height": 0.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 381.6
+		"width": 0.0
 	},
 	"select_symbol":
 	{
-		"height": 258.4,
+		"height": 0.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 574.4
+		"width": 0.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -1413,7 +349,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 247.0,
+	"side_bar_width": 237.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
