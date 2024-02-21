@@ -32,12 +32,12 @@ select:-webkit-autofill:focus {
   );
   margin: 0;
   padding: 0;
-	width:100%;
   position: fixed;
-  overflow:	hidden;
-	width: 100%;
-	height: 100vh;
-	pointer-events: none;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
 }
 .bubble-1 {
   left: 8%;
@@ -307,15 +307,14 @@ select:-webkit-autofill:focus {
   color: #ff7b00;
 }
 .home{
-	width: 100%;
-	height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .wrapper{
-	position: absolute;
-	top: 30%;
-	width: 100%;
-	display: flex;
-	justify-content: space-evenly;
+	position: fixed;
+  top: 30%;
+  display: block;
 	background: transparent;
 	overflow: hidden;
 	border-radius: 15px;
@@ -324,8 +323,10 @@ select:-webkit-autofill:focus {
 	overflow: hidden;
 	width: 320px;
 	height: 220px;
+  margin: 40px;
 	border-radius: 15px;
 	cursor: pointer;
+  float: left;
 }
 .card a{
 	text-decoration: none;
@@ -348,6 +349,10 @@ select:-webkit-autofill:focus {
 .card .background p{
 	font-size: 30px;
 	font-weight: 600;
+  tab-size: 4;
+}
+.card .background p sup{
+  font-size: 15px;
 }
 .card-overlay{
 	position: relative;

@@ -13,5 +13,7 @@ urlpatterns = [
     path('phisics-task/', views.phisics_task, name='phisics-task'),
     path('it/', views.it, name='it'),
     path('it-task/', views.it_task, name='it-task'),
-    path('sandbox', views.sandbox, name='sandbox')
+    path('sandbox/', views.sandbox, name='sandbox'),
+    path('task-list/', views.task_list, name='task-list'),
+    path('task/', views.task, name='task')
 ]

@@ -13,10 +13,10 @@
 		<header class="header">
             <ul class="nav">
                 <li class="text">
-                    <a class="href" href="{% url 'posts' %}">Home</a>
+                    <a class="href" href="{% url 'posts' %}">Домой</a>
                 </li>
                 <li class="text">
-                    <a class="href" href="{% url 'about' %}">About</a>
+                    <a class="href" href="{% url 'about' %}">О нас</a>
                 </li>
                 <li class="text">
                     <a class="search-wrapper">
@@ -47,14 +47,14 @@
 	    	</div>
 	      	<div class="wrapper">
 				<div class="form-container">
-                        <div class="form-inner">
-                            <form method="POST" class="login" value='login'>
-                                {% csrf_token %}
-								{%block form%}
-						      	{%endblock form%}
-                            </form>
-                        </div>
+                    <div class="form-inner">
+                        <form method="POST">
+                            {% csrf_token %}
+							{%block form%}
+						    {%endblock form%}
+                        </form>
                     </div>
+                </div>
 		    </div>
 
 			<main>

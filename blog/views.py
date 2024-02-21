@@ -2,17 +2,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
 from django.contrib.auth.decorators import  login_required
 from django.contrib import messages
-from .models import Post
+from .models import Post, Task, Solution, Comment
 from .forms import PostForm
 
 
 
 def home(request):
     return render(request, 'blog/home.html')
-
-#def group_take(request):
-#    return(str(request.user.groups.all())[19:-3] == "Moderators")
-#???
 
 def it(request):
     posts = Post.objects.all()
@@ -67,6 +63,34 @@ def sandbox(request):
 
 def about(request):
     return render(request, 'blog/about.html')
+
+def task_list(request):
+    if request.method=='GET':
+        value = request.GET.get('value')
+        tasks = Task.objects.all()
+        context = {
+        'tasks': tasks,
+        'group': request.user.groups.all(),
+        'value': value
+        }
+        print(value)
+        return render(request, 'blog/task_list.html', context)
+
+def task(request, id):
+    if request.method=='GET':
+        queryset = Task.objects.all()
+        task = get_object_or_404(queryset, pk=id)
+        solutions = Solution.objects.all()
+        comments = Comment.objects.all()
+        value = request.GET.get('value')
+        context = {
+        'task': task,
+        'solutions': solutions,
+        'comments': comments,
+        'group': request.user.groups.all(),
+        'value': value
+        }
+        return render(request, 'blog/task.html', context)
 
 @login_required
 def delete_post(request, id):

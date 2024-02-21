@@ -27,7 +27,6 @@ select:-webkit-autofill:focus {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  margin-top: 10px;
   border-radius: 15px;
   border: none;
 }
@@ -54,25 +53,23 @@ select:-webkit-autofill:focus {
   position: relative;
   padding: 30px;
 }
-.form-container .form-inner {
+.form-inner {
   display: flex;
   width: 100%;
 }
-.form-container .form-inner form {
+.form-inner form {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  gap: 20px;
 }
 .form-inner form .field {
   position: relative;
-  margin-bottom: 15px;
   height: 50px;
   width: 100%;
 }
 .form-inner form .pass-link{
-  margin-bottom: 20px;
-  margin-top: 10px;
 }
 .form-inner form .field input {
   height: 75%;
@@ -129,6 +126,7 @@ form .field input:focus::placeholder {
   display: block;
 
 }
+
 form .btn {
   height: 50px;
   width: 100%;
@@ -136,25 +134,52 @@ form .btn {
   position: relative;
   overflow: hidden;
 }
-form .btn button {
+.button {
   height: 100%;
   width: 100%;
   z-index: 1;
-  position: relative;
-  background: none;
   border: solid 1px #555;
-  color: #aaa;
-  transition: all 0.9s easy;
-  padding-left: 0;
   border-radius: 15px;
-  font-size: 20px;
-  font-weight: 600;
   cursor: pointer;
-}
-form .btn button:hover{
-  border: none;
-  background: #ff7b00;
-  color: #fff;
+  --tilt: 40px;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  color: #ff7b00;
+  background: none;
+  text-transform: uppercase;
+  & span {
+    font-size: 25px;
+    font-weight: 900;
+    mix-blend-mode: difference;
+  }
+  &:before,
+  &:after {
+    content: "";
+    z-index: -1;
+    width: calc(100% + var(--tilt));
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    background: #ff7b00;
+    clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 100%, 0 100%);
+    transition: transform 0.9s;
+  }
+  &:before {
+    left: calc(-100% - var(--tilt));
+  }
+  &:after {
+    left: 100%;
+    transform: rotate(180deg);
+  }
+  &:hover:before {
+    transform: translateX(100%);
+  }
+  &:hover:after {
+    transform: rotate(180deg) translateX(100%);
+  }
 }
 .header {
 	position: fixed;
@@ -190,6 +215,9 @@ form .btn button:hover{
   position: relative;
   text-decoration: none;
   font-weight: 500;
+  &:hover{
+    color: #ff7b00;
+  }
 }
 .nav .text .href::after{
   content: '';
@@ -198,7 +226,7 @@ form .btn button:hover{
   bottom: -4px;
   width: 100%;
   height: 3px;
-  background: #fff;
+  background: #ff7b00;
   border-radius: 3px;
   transform-origin: right;
   transform: scaleZ(0);
@@ -261,21 +289,20 @@ form .btn button:hover{
 .header .search-wrapper:focus-within input {
   width: 200px;
 }
-::placeholder {
-  font: inherit;
-  color: #e3e3e3;
-}
 .background{
-	width: 100%;
-	height: 100vh;
 	background: -webkit-linear-gradient(
     left,
     #0d1116,
     #171b20
   );
-	background-position: center;
-	background-size: cover;
-	pointer-events: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
 }
 .bubble-static {
   width: 1000px;

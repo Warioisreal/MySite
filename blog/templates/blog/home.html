@@ -24,9 +24,9 @@
                 </li>
                 <li class="tasks">Задачи
                     <div class="task_block">
-                        <a href="#">Программирование</a>
-                        <a href="#">Физика</a>
-                        <a href="#">Математика</a>
+                        <a href="{% url 'it-task' %}">Программирование</a>
+                        <a href="{% url 'phisics-task' %}">Физика</a>
+                        <a href="{% url 'math-task' %}">Математика</a>
                     </div>
                 </li>
             </ul>
@@ -93,7 +93,7 @@
                             href="{% url 'login' %}"
                             {% endif %}>
                             <div class="background">
-                                <p>def f(a):<br>return a</p>
+                                <p>print("code")</p>
                             </div>
                             <div class="card-overlay">Программирование</div>
                         </a>
@@ -105,7 +105,7 @@
                             href="{% url 'login' %}"
                             {%endif%}>
                             <div class="background">
-                                <p>E = mc²</p>
+                                <p>E = mc<sup>2</sup></p>
                             </div>
                             <div class="card-overlay">Физика</div>
                         </a>
@@ -117,7 +117,7 @@
                             href="{% url 'login' %}"
                             {%endif%}>
                             <div class="background">
-                                <p>a² + b² = c²</p>
+                                <p>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
                             </div>
                             <div class="card-overlay">Математика</div>
                         </a>

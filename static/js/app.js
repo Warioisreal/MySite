@@ -1,13 +1,3 @@
-function action(id) {
-  var added_item_button = document.getElementById(id);
-  var actualDisplay = getComputedStyle(added_item_button).display;
-  if (actualDisplay == 'none') {
-    added_item_button.style.display = 'flex';
-  } else {
-    added_item_button.style.display = 'none';
-  }
-}
-
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
 let searchBtn = document.querySelector(".bx-search");
