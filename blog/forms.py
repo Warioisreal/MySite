@@ -1,14 +1,45 @@
 from django.forms import ModelForm
-from .models import Post
+from .models import Post, Task, Solution, Comment
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-class LoginForm(forms.Form):
-    username = forms.CharField(max_length=65)
-    password = forms.CharField(max_length=65, widget=forms.PasswordInput)
-
 class PostForm(ModelForm):
     class Meta:
         model = Post
-        fields = ['title','content','index']
+        fields = [
+        'title',
+        'content',
+        'index'
+        ]
+
+class TaskForm(ModelForm):
+    class Meta:
+        model = Task
+        fields = [
+        'title',
+        'chapter_title',
+        'upload',
+        'content',
+        'author',
+        'index'
+        ]
+
+class SolutionForm(ModelForm):
+    class Meta:
+        model = Solution
+        fields = [
+        'title',
+        'upload',
+        'content',
+        'author'
+        ]
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = [
+        'title',
+        'upload',
+        'content'
+        ]

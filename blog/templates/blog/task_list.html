@@ -1,0 +1,57 @@
+{% extends 'basetask.html' %}
+{%load static %}
+{% block title_name %}
+EasyLearnZone - {% if sub == "i" %} Programming
+          {% elif sub == "p" %} Phisic
+          {% elif sub == "m" %} Mathematic
+          {% endif %} task-list
+{% endblock title_name %}
+{% block sbar %}
+      <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'><img src="{% static 'imajes/logo.png' %}" style="width: 27px; height: 27px; filter: invert(100%);"/></i>
+        <div class="logo_name">Programming</div>
+        <i class='bx bx-menu' id="btn"><img src="{% static 'imajes/3lines.png' %}" style="width: 27px; height: 27px;"/></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class='bx bx-search' style="width: 27px; padding-left: 1px; padding-top: 2px;"><img src="{% static 'imajes/loupe.png' %}" style="width: 27px; height: 27px;"/></i>
+          <input type="text" placeholder="Search...">
+          <span class="tooltip">Поиск</span>
+        </li>
+        <li>
+          <a href="{% url 'posts' %}">
+            <i class='bx bx-user'><img src="{% static 'imajes/home.png' %}" /></i>
+            <span class="links_name">На главную страницу</span>
+          </a>
+          <span class="tooltip">На главную страницу</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-user'><img src="{% static 'imajes/book.png' %}" style="filter:invert(180);" /></i>
+            <span class="links_name">Авторские курсы</span>
+          </a>
+          <span class="tooltip">Авторские курсы</span>
+        </li>
+        <li>
+          <a href="{% url 'sandbox' %}">
+            <i class='bx bx-user'><img src="{% static 'imajes/itimg1.png' %}" style="filter:invert(180);" /></i>
+            <span class="links_name">Песочница</span>
+          </a>
+          <span class="tooltip">Песочница</span>
+        </li>
+        <li>
+          <a
+          {% if sub == "i" %} href="{% url 'it-task' %}"
+          {% elif sub == "p" %} href="{% url 'phisics-task' %}"
+          {% elif sub == "m" %} href="{% url 'math-task' %}"
+          {% endif %}
+          >
+            <i class='bx bx-user'><img src="{% static 'imajes/back.png' %}" style="filter:invert(180);" /></i>
+            <span class="links_name">Все разделы</span>
+          </a>
+          <span class="tooltip">Назад ко всем разделам</span>
+        </li>
+      </ul>
+{% endblock sbar %}
+{% block content%}
+{% endblock content%}

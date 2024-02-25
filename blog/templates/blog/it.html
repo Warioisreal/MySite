@@ -6,7 +6,7 @@ EasyLearnZone - Programming
 {% block sbar %}
       <div class="logo-details">
         <i class='bx bxl-c-plus-plus icon'><img src="{% static 'imajes/logo.png' %}" style="width: 27px; height: 27px; filter: invert(100%);"/></i>
-        <div class="logo_name">Programming</div>
+        <div class="logo_name">Программирование</div>
         <i class='bx bx-menu' id="btn"><img src="{% static 'imajes/3lines.png' %}" style="width: 27px; height: 27px;"/></i>
       </div>
       <ul class="nav-list">
@@ -54,21 +54,19 @@ EasyLearnZone - Programming
                 <a href="{% url 'post-create' %}">добавить олимпиаду</a>
             {% endif %}
             {% for post in posts %}
-                {% if  post.index == 'i' %}
-                    <li class="block">
-                        <div class="background">
-                            <p>{{ post.title }}</p>
-                            <a href="{{ post.content }}">ссылка</a>
-                            <small>Опубликовано: {{ post.published_at | date:"M d, Y" }}
-                                {% if request.user.is_authenticated and group %}
-                                    <a href="{% url 'post-edit' post.id %}">Изменить</a>
-                                    <a href="{% url 'post-delete' post.id%}">Удалить</a>
-                                    Автор: {{ post.author }}
-                                {% endif %}
-                            </small>
-                        </div>
-                    </li>
-                {% endif %}
+                <li class="block">
+                    <div class="background">
+                        <p>{{ post.title }}</p>
+                        <a href="{{ post.content }}">ссылка</a>
+                        <small>Опубликовано: {{ post.published_at | date:"M d, Y" }}
+                            {% if request.user.is_authenticated and group %}
+                                <a href="{% url 'post-edit' post.id %}">Изменить</a>
+                                <a href="{% url 'post-delete' post.id%}">Удалить</a>
+                                Автор: {{ post.author }}
+                            {% endif %}
+                        </small>
+                    </div>
+                </li>
             {% endfor %}
         </ul>
     </section>

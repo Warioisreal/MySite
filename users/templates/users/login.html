@@ -1,24 +1,27 @@
 {% extends 'baselog.html' %}
-{%block name%}Login{%endblock name%}
+{% block title_name %}EasyLearnZone - Login{% endblock title_name %}
+{%block h1%}Login{%endblock h1%}
 {% block form %}
 <div class="field">
     <label for="id_username">USERNAME</label>
-    <input type="text" name="username" maxlength="65" id="id_username"  required>
+    <input type="text" name="username" maxlength="65" id="id_username" autocomplete="username" autofocus required>
     <i class="fa-solid_fa-login_fa-username"></i>
 </div>
 <div class="field">
-    <label for="id_username">PASSWORD</label>
-    <input type="password" name="password" maxlength="65" id="id_password"  required>
+    <label for="id_password">PASSWORD</label>
+    <input type="password" name="password" maxlength="65" id="id_password" autocomplete="current-password" required>
+    <p id="togglePassword" class="show-password">S</p>
     <i class="fa-solid_fa-login_fa-username"></i>
 </div>
 <div class="pass-link">
-  	<a href="#">Забыли пароль?<p>-></p></a>
-    <p>-></p>
+  	<a href="#">Забыли пароль?</a>
+    <i>></i>
 </div>
 <div class="btn">
     <button class="button" type="submit" value="Login"><span>Login</span></button>
 </div>
 <div class="pass-link">
-  	<a href="{% url 'register' %}">Ещё нет аккаунта аккаунта?<p>-></p></a>
+  	<a href="{% url 'register' %}">Ещё нет аккаунта аккаунта?</a>
+    <i>></i>
 </div>
 {% endblock form %}

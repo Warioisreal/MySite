@@ -4,10 +4,10 @@
   	<head>
 	    <meta charset="UTF-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	    <link rel="stylesheet" href="{% static 'css/stylelog.css' %}" />
-	    <title>EasyLearnZone - Login</title>
-	    <script src="{% static 'js/apphome.js' %}" defer></script>
+	    <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
+	    <script src="{% static 'js/app2.js' %}" defer></script>
 	    <link rel="website icon" type="jpg" href="{% static 'imajes/logo.png' %}">
+	    <title>{% block title_name %}{% endblock title_name %}</title>
   	</head>
   	<body>
 		<header class="header">
@@ -43,7 +43,7 @@
 	    <section class="home">
 	    	<div class="preview">
 	    		<img src="{% static 'imajes/logo.png' %}" style="width: 60px; height: 60px; filter: invert(180);" />
-	    		<p>{%block name%}{%endblock name%} to EasyLearnZone</p>
+	    		<h1>{%block h1%}{%endblock h1%} to EasyLearnZone</h1>
 	    	</div>
 	      	<div class="wrapper">
 				<div class="form-container">

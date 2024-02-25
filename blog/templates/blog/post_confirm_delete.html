@@ -1,17 +1,13 @@
 {% extends 'basepost.html' %}
-{%block title_name%}EazyLearnZone - Delete Post{%endblock title_name%}
-{% block content %}
-<div class="post-block">
-  <h1>Удаление поста</h1>
-  <section class="post-content">
-    <div class="background">
-      <form class="form-block" method="POST">
-        {% csrf_token %}
-        <p>Вы действительно хотите удалить пост "{{post.title}}"?</p>
-        <input type="submit" value="Да, удалить">
-        <a href="{% url 'posts' %}">Назад</a>
-      </form>
+{% block title_name %}EazyLearnZone - Delete Post{% endblock title_name %}
+{% block h1 %}Удаление поста{% endblock h1 %}
+{% block form %}
+    <p>Вы действительно хотите удалить пост "{{post.title}}"?</p>
+    <div class="btn">
+        <button class="button" type="submit" value="Удалить"><span>Удалить</span></button>
     </div>
-  </section>
-</div>
-{% endblock content %}
+    <div class="pass-link">
+        <a href="{% url 'posts' %}">Назад</a>
+        <i>></i>
+    </div>
+{% endblock form %}

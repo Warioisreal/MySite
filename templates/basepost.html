@@ -4,15 +4,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/stylepost.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
     <link rel="website icon" href="{% static 'imajes/logo.png' %}">
-    <title>{%block title_name%}{%endblock title_name%}</title>
+    <title>{% block title_name %}{% endblock title_name %}</title>
   </head>
   <body>
     <div class="background"></div>
-    <div class="main-content">
-      {%block content%}
-      {%endblock content%}
-    </div>
+    <section class="home">
+      <div class="preview">
+        <h1>{%block h1%}{%endblock h1%}</h1>
+      </div>
+      <div class="wrapper">
+        <div class="form-container">
+          <div class="form-inner">
+            <form method="POST">
+              {% csrf_token %}
+              {%block form%}
+              {%endblock form%}
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <main>
+      </main>
+    </section>
   </body>
 </html>
