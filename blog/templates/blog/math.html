@@ -25,9 +25,9 @@ EasyLearnZone - Math
         <li>
           <a href="#">
             <i class='bx bx-user'><img src="{% static 'imajes/book.png' %}" style="filter:invert(180);" /></i>
-            <span class="links_name">Решения задач с<br> разборами</span>
+            <span class="links_name">Авторские курсы</span>
           </a>
-          <span class="tooltip">Решения задач с разборами</span>
+          <span class="tooltip">Авторские курсы</span>
         </li>
         <li>
           <a href="{% url 'math-task' %}">
@@ -42,7 +42,7 @@ EasyLearnZone - Math
     <section class="home">
         <div class="backgroundimgm"></div>
         <ul class="wrapper">
-            <h2 style="color: white; font-size: 35px;">Олимпиады</h2>
+            <h2 style="color: #fff; font-size: 35px;">Олимпиады</h2>
             {% if request.user.is_authenticated and group %}
                 <a href="{% url 'post-create' %}">добавить олимпиаду</a>
             {% endif %}

@@ -33,8 +33,9 @@ class Task(models.Model):
     upload = models.ImageField(upload_to=user_directory_path)
     content = models.TextField()
     author = models.CharField(max_length=120)
-    author_post = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     index = models.CharField(max_length=1)
+    clas = models.IntegerField()
     published_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
@@ -49,7 +50,7 @@ class Solution(models.Model):
     upload = models.ImageField(upload_to=user_directory_path)
     content = models.TextField()
     author = models.CharField(max_length=120)
-    author_post = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     rate_count = models.IntegerField()
     rate_sum = models.IntegerField()
     task = models.ForeignKey('Task', on_delete=models.CASCADE)
@@ -66,8 +67,25 @@ class Comment(models.Model):
     title = models.CharField(max_length=120)
     upload = models.ImageField(upload_to=user_directory_path)
     content = models.TextField()
-    author_post = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     solution = models.ForeignKey('Solution', on_delete=models.CASCADE)
+    published_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.title
+
+
+    class Meta:
+        ordering = ['-published_at']
+
+class Course(models.Model):
+    title = models.CharField(max_length=120)
+    upload = models.ImageField(upload_to=user_directory_path)
+    content = models.TextField()
+    author = models.CharField(max_length=120)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    rate_count = models.IntegerField()
+    rate_sum = models.IntegerField()
     published_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

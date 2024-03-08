@@ -290,7 +290,7 @@ ul li{
   &::before {
     left: 0%;
     height: 130%;
-    background: linear-gradient(to right, #ff7b00, #ff9933);
+    background: linear-gradient(to right, #f1c40f, #ffe41f);
   }
   &::after {
     left: -7%;
@@ -300,7 +300,7 @@ ul li{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.164);
   }
   &:hover{
-    color: #ff7b00;
+    color: #f1c40f;
 
     &::before {
     transform: translateX(-5%);
@@ -351,6 +351,6 @@ ul li{
   position: absolute;
   padding-left: 25px;
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 18px;
   transition: 0.5s;
 }

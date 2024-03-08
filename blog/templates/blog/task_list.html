@@ -1,15 +1,20 @@
-{% extends 'basetask.html' %}
+{% extends 'basetasklist.html' %}
 {%load static %}
 {% block title_name %}
 EasyLearnZone - {% if sub == "i" %} Programming
-          {% elif sub == "p" %} Phisic
-          {% elif sub == "m" %} Mathematic
-          {% endif %} task-list
+                {% elif sub == "p" %} Phisic
+                {% elif sub == "m" %} Mathematic
+                {% endif %} task-list
 {% endblock title_name %}
 {% block sbar %}
       <div class="logo-details">
         <i class='bx bxl-c-plus-plus icon'><img src="{% static 'imajes/logo.png' %}" style="width: 27px; height: 27px; filter: invert(100%);"/></i>
-        <div class="logo_name">Programming</div>
+        <div class="logo_name">
+          {% if sub == "i" %} Programming
+          {% elif sub == "p" %} Phisic
+          {% elif sub == "m" %} Mathematic
+          {% endif %}
+        </div>
         <i class='bx bx-menu' id="btn"><img src="{% static 'imajes/3lines.png' %}" style="width: 27px; height: 27px;"/></i>
       </div>
       <ul class="nav-list">
@@ -32,6 +37,7 @@ EasyLearnZone - {% if sub == "i" %} Programming
           </a>
           <span class="tooltip">Авторские курсы</span>
         </li>
+        {% if sub == "i" %}
         <li>
           <a href="{% url 'sandbox' %}">
             <i class='bx bx-user'><img src="{% static 'imajes/itimg1.png' %}" style="filter:invert(180);" /></i>
@@ -39,6 +45,7 @@ EasyLearnZone - {% if sub == "i" %} Programming
           </a>
           <span class="tooltip">Песочница</span>
         </li>
+        {% endif %}
         <li>
           <a
           {% if sub == "i" %} href="{% url 'it-task' %}"
@@ -54,4 +61,20 @@ EasyLearnZone - {% if sub == "i" %} Programming
       </ul>
 {% endblock sbar %}
 {% block content%}
+<section class="home">
+  <div class="backgroundimgi"></div>
+  <ul class="wrapper">
+    <h2 style="color: #fff; font-size: 35px;">{{theme}}</h2>
+    {% if request.user.is_authenticated and group %}
+      <a href="{% url 'task-create' %}">добавить задание</a>
+    {% endif %}
+    {% for task in tasks %}
+      <li class="block">
+        <i>{{task.id}}</i>
+        <p>{{task.title}}</p>
+        <p>{{task.content}}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
 {% endblock content%}

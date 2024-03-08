@@ -87,40 +87,16 @@
         <section class="home">
             <div class="wrapper">
                     <div class="card">
-                        <a {% if request.user.is_authenticated %}
-                            href="{% url 'it' %}"
-                            {% else %}
-                            href="{% url 'login' %}"
-                            {% endif %}>
-                            <div class="background">
-                                <p>print("code")</p>
-                            </div>
-                            <div class="card-overlay">Программирование</div>
-                        </a>
+                        <p>print("code")</p>
+                        <a href="{% url 'it' %}">Программирование</a>
                     </div>
                     <div class="card">
-                        <a {%if request.user.is_authenticated %}
-                            href="{% url 'phisics' %}"
-                            {%else%}
-                            href="{% url 'login' %}"
-                            {%endif%}>
-                            <div class="background">
-                                <p>E = mc<sup>2</sup></p>
-                            </div>
-                            <div class="card-overlay">Физика</div>
-                        </a>
+                        <p>E = mc<sup>2</sup></p>
+                        <a href="{% url 'phisics' %}">Физика</a>
                     </div>
                     <div class="card">
-                        <a {%if request.user.is_authenticated %}
-                            href="{% url 'math' %}"
-                            {%else%}
-                            href="{% url 'login' %}"
-                            {%endif%}>
-                            <div class="background">
-                                <p>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
-                            </div>
-                            <div class="card-overlay">Математика</div>
-                        </a>
+                        <p>a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
+                        <a href="{% url 'math' %}">Математика</a>
                     </div>
             </div>
         </section>

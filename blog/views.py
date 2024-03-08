@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
 from django.contrib.auth.decorators import  login_required
 from django.contrib import messages
-from .models import Post, Task, Solution, Comment
-from .forms import PostForm
+from .models import Post, Task, Solution, Comment, Course
+from .forms import PostForm, TaskForm, SolutionForm, CommentForm, CourseForm
 
 
 
@@ -68,16 +68,16 @@ def task_list(request):
     if request.method=='GET':
         sub = request.GET.get('s')
         clas = request.GET.get('c')
-        numb = request.GET.get('n')
-        tasks = Task.objects.all()
+        theme = request.GET.get('n')
+        tasks = Task.objects.filter(index = sub, clas = clas, chapter_title = theme)
         context = {
         'tasks': tasks,
         'group': request.user.groups.all(),
         'sub': sub,
         'clas': clas,
-        'numb': numb
+        'theme': theme
         }
-        print(sub, clas, numb)
+        print(sub, clas, theme)
         return render(request, 'blog/task_list.html', context)
 
 def task(request, id):
@@ -151,3 +151,177 @@ def create_post(request):
         else:
             messages.error(request, 'Please correct the following errors:')
             return render(request, 'blog/post_form.html', {'form':form})
+
+@login_required
+def delete_task(request, id):
+    queryset = Task.objects.all()
+    task = get_object_or_404(queryset, pk=id)
+    context = {'task': task}
+    if request.method == 'GET':
+        return render(request, 'blog/task_confirm_delete.html', context)
+
+    elif request.method == 'POST':
+        task.delete()
+        messages.success(request, 'The task has been deleted successfully.')
+        return redirect('posts')
+
+@login_required
+def edit_task(request, id):
+    queryset = Task.objects.all()
+    task = get_object_or_404(queryset, pk=id)
+    if request.method == 'GET':
+        context = {
+        'form': TaskForm(instance=post), 'id': id,
+        'title': task.title,
+        'chapter_title': task.chapter_title,
+        'content': task.content,
+        'upload': task.upload,
+        'author': task.author,
+        'lesson': task.index
+        }
+        return render(request, 'blog/task_form.html', context)
+
+    elif request.method == 'POST':
+        form = TaskForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'The task has been updated successfully.')
+            return redirect('posts')
+
+        else:
+            messages.error(request, 'Please correct the following errors:')
+            return render(request, 'blog/task_form.html', {'form':form})
+
+
+@login_required
+def create_task(request):
+    if request.method == 'GET':
+        context = {'form': TaskForm()}
+        return render(request, 'blog/task_form.html', context)
+    elif request.method == 'POST':
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.author = request.user
+            user.save()
+            messages.success(request, 'The task has been created successfully.')
+            return redirect('posts')
+        else:
+            messages.error(request, 'Please correct the following errors:')
+            return render(request, 'blog/task_form.html', {'form':form})
+
+@login_required
+def delete_course(request, id):
+    queryset = Course.objects.all()
+    course = get_object_or_404(queryset, pk=id)
+    context = {'course': course}
+    if request.method == 'GET':
+        return render(request, 'blog/course_confirm_delete.html', context)
+
+    elif request.method == 'POST':
+        course.delete()
+        messages.success(request, 'The course has been deleted successfully.')
+        return redirect('posts')
+
+@login_required
+def edit_course(request, id):
+    queryset = Course.objects.all()
+    course = get_object_or_404(queryset, pk=id)
+    if request.method == 'GET':
+        context = {
+        'form': CourseForm(instance=post), 'id': id,
+        'title': course.title,
+        'chapter_title': course.chapter_title,
+        'content': course.content,
+        'upload': course.upload,
+        'author': course.author,
+        'lesson': course.index
+        }
+        return render(request, 'blog/course_form.html', context)
+
+    elif request.method == 'POST':
+        form = CourseForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'The course has been updated successfully.')
+            return redirect('posts')
+
+        else:
+            messages.error(request, 'Please correct the following errors:')
+            return render(request, 'blog/course_form.html', {'form':form})
+
+
+@login_required
+def create_course(request):
+    if request.method == 'GET':
+        context = {'form': CourseForm()}
+        return render(request, 'blog/course_form.html', context)
+    elif request.method == 'POST':
+        form = CourseForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.author = request.user
+            user.save()
+            messages.success(request, 'The course has been created successfully.')
+            return redirect('posts')
+        else:
+            messages.error(request, 'Please correct the following errors:')
+            return render(request, 'blog/course_form.html', {'form':form})
+
+@login_required
+def delete_solution(request, id):
+    queryset = Solution.objects.all()
+    solution = get_object_or_404(queryset, pk=id)
+    context = {'solution': solution}
+    if request.method == 'GET':
+        return render(request, 'blog/solution_confirm_delete.html', context)
+
+    elif request.method == 'POST':
+        solution.delete()
+        messages.success(request, 'The solution has been deleted successfully.')
+        return redirect('posts')
+
+@login_required
+def edit_solution(request, id):
+    queryset = Solution.objects.all()
+    solution = get_object_or_404(queryset, pk=id)
+    if request.method == 'GET':
+        context = {
+        'form': SolutionForm(instance=post), 'id': id,
+        'title': solution.title,
+        'chapter_title': solution.chapter_title,
+        'content': solution.content,
+        'upload': solution.upload,
+        'author': solution.author,
+        'lesson': solution.index
+        }
+        return render(request, 'blog/solution_form.html', context)
+
+    elif request.method == 'POST':
+        form = SolutionForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'The solution has been updated successfully.')
+            return redirect('posts')
+
+        else:
+            messages.error(request, 'Please correct the following errors:')
+            return render(request, 'blog/solution_form.html', {'form':form})
+
+
+@login_required
+def create_solution(request):
+    if request.method == 'GET':
+        context = {'form': SolutionForm()}
+        return render(request, 'blog/solution_form.html', context)
+    elif request.method == 'POST':
+        form = SolutionForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.author = request.user
+            user.save()
+            messages.success(request, 'The solution has been created successfully.')
+            return redirect('posts')
+        else:
+            messages.error(request, 'Please correct the following errors:')
+            return render(request, 'blog/solution_form.html', {'form':form})

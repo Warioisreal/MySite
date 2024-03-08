@@ -9,7 +9,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #f1c40f;
+  -webkit-text-fill-color: #fff;
   transition: background-color 5000s ease-in-out 0s;
 }
 ::selection{
@@ -51,7 +51,7 @@ input:-webkit-autofill::first-line {
   font-size: 30px;
   padding: 20px;
   background: -webkit-linear-gradient(
-    45deg, #eee 0%, #ff7b00 100%
+    45deg, #eee 0%, #f1c40f 100%
   );
   background-clip: text;
   -webkit-text-stroke: 2px transparent;
@@ -92,7 +92,7 @@ form .field :where(input, select) {
   outline: none;
   padding-left: 15px;
   padding-right: 15px;
-  border-radius: 15px;
+  border-radius: 10px;
   border: 1px solid #555;
   font-size: 17px;
   background: transparent;
@@ -123,11 +123,11 @@ form .field label {
   position: relative;
   right: -15px;
   pointer-events: none;
-  color: #ff7b00;
+  color: #f1c40f;
 }
 form .field :where(input, select):focus {
-  color: #f06900;
-  border: 2px solid #ff7b00;
+  color: #f1a40f;
+  border: 2px solid #f1c40f;
 }
 select {
   appearance: none;
@@ -141,7 +141,7 @@ select::-ms-expand {
   display: none;
 }
 /* Custom Select wrapper */
-.select {
+/*.select {
   position: relative;
   display: flex;
   width: min(20rem, 90vw);
@@ -176,8 +176,8 @@ select::-ms-expand {
   75% {
     transform: translatey(-5px);
   }
-}
-option{
+}*/
+/*option{
   height: 1px;
   width: 50px;
   color: #fff;
@@ -186,7 +186,7 @@ option{
 }
 option:hover{
   color: red;
-}
+}*/
 form .pass-link{
   display: flex;
   flex-direction: row;
@@ -224,7 +224,7 @@ form .pass-link:hover i{
 form .btn {
   height: 50px;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
 }
@@ -233,14 +233,14 @@ form .btn {
   width: 100%;
   z-index: 1;
   border: solid 1px #555;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
   --tilt: 40px;
   display: block;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  color: #ff7b00;
+  color: #f1c40f;
   background: none;
   text-transform: uppercase;
   & span {
@@ -257,7 +257,7 @@ form .btn {
 
     position: absolute;
     top: 0;
-    background: #ff7b00;
+    background: #f1c40f;
     clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 100%, 0 100%);
     transition: transform 0.9s;
   }
@@ -310,7 +310,7 @@ form .btn {
   text-decoration: none;
   font-weight: 500;
   &:hover{
-    color: #ff7b00;
+    color: #f1c40f;
   }
 }
 .nav .text .href::after{
@@ -320,7 +320,7 @@ form .btn {
   bottom: -4px;
   width: 100%;
   height: 3px;
-  background: #ff7b00;
+  background: #f1c40f;
   border-radius: 3px;
   transform-origin: right;
   transform: scaleZ(0);

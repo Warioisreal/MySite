@@ -49,7 +49,7 @@ EasyLearnZone - Programming
     <section class="home">
         <div class="backgroundimgi"></div>
         <ul class="wrapper">
-            <h2 style="color: white; font-size: 35px;">Олимпиады</h2>
+            <h2 style="color: #fff; font-size: 35px;">Олимпиады</h2>
             {% if request.user.is_authenticated and group %}
                 <a href="{% url 'post-create' %}">добавить олимпиаду</a>
             {% endif %}
