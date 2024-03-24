@@ -21,7 +21,7 @@
 	margin:0;
 }
 .errorlist li{
-	color:red;
+	color: #f00;
 	list-style:none;
 }
 

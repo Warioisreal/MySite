@@ -4,7 +4,8 @@ from django.contrib.auth.decorators import  login_required
 from django.contrib import messages
 from .models import Post, Task, Solution, Comment, Course
 from .forms import PostForm, TaskForm, SolutionForm, CommentForm, CourseForm
-
+from django.http import HttpResponse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def home(request):
@@ -65,42 +66,57 @@ def about(request):
     return render(request, 'blog/about.html')
 
 def task_list(request):
-    if request.method=='GET':
-        sub = request.GET.get('s')
-        clas = request.GET.get('c')
-        theme = request.GET.get('n')
-        tasks = Task.objects.filter(index = sub, clas = clas, chapter_title = theme)
-        context = {
-        'tasks': tasks,
-        'group': request.user.groups.all(),
-        'sub': sub,
-        'clas': clas,
-        'theme': theme
-        }
-        print(sub, clas, theme)
-        return render(request, 'blog/task_list.html', context)
+    template = 'blog/task_list.html'
+    template_page = 'blog/task_list_page.html'
+    sub = request.GET.get('s')
+    clas = request.GET.get('c')
+    theme = request.GET.get('n')
+    tasks = Task.objects.filter(index = sub, clas = clas, chapter_title = theme)
+    paginator = Paginator(tasks, 8)
+    page = request.GET.get('page')
+    tasks_only = request.GET.get('tasks_only')
+    try:
+        tasks = paginator.page(page)
+    except PageNotAnInteger:
+        tasks = paginator.page(1)
+    except EmptyPage:
+        if tasks_only:
+            return HttpResponse('')
+        tasks = paginator.page(paginator.num_pages)
+    context = {
+    'tasks': tasks,
+    'group': request.user.groups.all(),
+    'sub': sub,
+    'clas': clas,
+    'theme': theme
+    }
+    if tasks_only:
+        return render(request, template_page, context)
+    return render(request, template, context)
 
 def task(request, id):
-    if request.method=='GET':
-        queryset = Task.objects.all()
-        task = get_object_or_404(queryset, pk=id)
-        solutions = Solution.objects.all()
-        comments = Comment.objects.all()
-        value = request.GET.get('value')
-        context = {
-        'task': task,
-        'solutions': solutions,
-        'comments': comments,
-        'group': request.user.groups.all(),
-        'value': value
-        }
-        return render(request, 'blog/task.html', context)
+    queryset = Task.objects.all()
+    task = get_object_or_404(queryset, pk=id)
+    solutions = Solution.objects.all()
+    comments = Comment.objects.all()
+    value = request.GET.get('value')
+    context = {
+    'task': task,
+    'solutions': solutions,
+    'comments': comments,
+    'group': request.user.groups.all(),
+    'value': value
+    }
+    return render(request, 'blog/task.html', context)
 
 @login_required
 def delete_post(request, id):
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, pk=id)
-    context = {'post': post}
+    context = {
+    'post': post,
+    'group': request.user.groups.all()
+    }
     if request.method == 'GET':
         return render(request, 'blog/post_confirm_delete.html', context)
 
@@ -117,6 +133,7 @@ def edit_post(request, id):
     if request.method == 'GET':
         context = {
         'form': PostForm(instance=post), 'id': id,
+        'group': request.user.groups.all(),
         'title': post.title,
         'content': post.content,
         'lesson': post.index
@@ -138,7 +155,10 @@ def edit_post(request, id):
 @login_required
 def create_post(request):
     if request.method == 'GET':
-        context = {'form': PostForm()}
+        context = {
+        'form': PostForm(),
+        'group': request.user.groups.all()
+        }
         return render(request, 'blog/post_form.html', context)
     elif request.method == 'POST':
         form = PostForm(request.POST)
@@ -156,7 +176,10 @@ def create_post(request):
 def delete_task(request, id):
     queryset = Task.objects.all()
     task = get_object_or_404(queryset, pk=id)
-    context = {'task': task}
+    context = {
+    'task': task,
+    'group': request.user.groups.all()
+    }
     if request.method == 'GET':
         return render(request, 'blog/task_confirm_delete.html', context)
 
@@ -172,6 +195,7 @@ def edit_task(request, id):
     if request.method == 'GET':
         context = {
         'form': TaskForm(instance=post), 'id': id,
+        'group': request.user.groups.all(),
         'title': task.title,
         'chapter_title': task.chapter_title,
         'content': task.content,
@@ -196,7 +220,10 @@ def edit_task(request, id):
 @login_required
 def create_task(request):
     if request.method == 'GET':
-        context = {'form': TaskForm()}
+        context = {
+        'form': TaskForm(),
+        'group': request.user.groups.all()
+        }
         return render(request, 'blog/task_form.html', context)
     elif request.method == 'POST':
         form = TaskForm(request.POST)
@@ -214,7 +241,10 @@ def create_task(request):
 def delete_course(request, id):
     queryset = Course.objects.all()
     course = get_object_or_404(queryset, pk=id)
-    context = {'course': course}
+    context = {
+    'course': course,
+    'group': request.user.groups.all()
+    }
     if request.method == 'GET':
         return render(request, 'blog/course_confirm_delete.html', context)
 
@@ -230,6 +260,7 @@ def edit_course(request, id):
     if request.method == 'GET':
         context = {
         'form': CourseForm(instance=post), 'id': id,
+        'group': request.user.groups.all(),
         'title': course.title,
         'chapter_title': course.chapter_title,
         'content': course.content,
@@ -254,7 +285,10 @@ def edit_course(request, id):
 @login_required
 def create_course(request):
     if request.method == 'GET':
-        context = {'form': CourseForm()}
+        context = {
+        'form': CourseForm(),
+        'group': request.user.groups.all()
+        }
         return render(request, 'blog/course_form.html', context)
     elif request.method == 'POST':
         form = CourseForm(request.POST)
@@ -272,7 +306,10 @@ def create_course(request):
 def delete_solution(request, id):
     queryset = Solution.objects.all()
     solution = get_object_or_404(queryset, pk=id)
-    context = {'solution': solution}
+    context = {
+    'solution': solution,
+    'group': request.user.groups.all()
+    }
     if request.method == 'GET':
         return render(request, 'blog/solution_confirm_delete.html', context)
 
@@ -288,6 +325,7 @@ def edit_solution(request, id):
     if request.method == 'GET':
         context = {
         'form': SolutionForm(instance=post), 'id': id,
+        'group': request.user.groups.all(),
         'title': solution.title,
         'chapter_title': solution.chapter_title,
         'content': solution.content,
@@ -312,7 +350,10 @@ def edit_solution(request, id):
 @login_required
 def create_solution(request):
     if request.method == 'GET':
-        context = {'form': SolutionForm()}
+        context = {
+        'form': SolutionForm(),
+        'group': request.user.groups.all()
+        }
         return render(request, 'blog/solution_form.html', context)
     elif request.method == 'POST':
         form = SolutionForm(request.POST)

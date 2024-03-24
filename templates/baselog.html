@@ -4,12 +4,17 @@
   	<head>
 	    <meta charset="UTF-8" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <link rel="stylesheet" href="{% static 'css/styleload.css' %}" />
 	    <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
+	    <script src="{% static 'js/preloader_function.js' %}"></script>
 	    <script src="{% static 'js/app2.js' %}" defer></script>
 	    <link rel="website icon" type="jpg" href="{% static 'imajes/logo.png' %}">
 	    <title>{% block title_name %}{% endblock title_name %}</title>
   	</head>
   	<body>
+  		<div class="preloader">
+            <div class="loader"></div>
+        </div>
 		<header class="header">
             <ul class="nav">
                 <li class="text">

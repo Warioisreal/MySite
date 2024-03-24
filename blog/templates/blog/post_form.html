@@ -1,43 +1,47 @@
 {% extends 'basepostform.html' %}
-{% block title_name %}EazyLearnZone - {% if id %}Edit{% else %}New{% endif %} Post{% endblock title_name %}
-{% block h1 %}{% if id %}Изменение поста{% else %}Новый пост{% endif %}{% endblock h1 %}
+{% block title_name %}
+	EazyLearnZone - {% if id %}Edit{% else %}New{% endif %} Post
+{% endblock title_name %}
+{% block h1 %}
+	{% if id %}Изменение поста{% else %}Новый пост{% endif %}
+{% endblock h1 %}
 {% block form %}
-<div class="field">
-	<label for="id_title">Название</label>
-	<input type="text" name="title" cols="20" rows="1" maxlength="120" value="{{ title }}" id="id_title" autocomplete="new-title" autofocus required></div>
-<div class="field">
-	<label for="id_content">Ссылка</label>
-	<input type="text" name="content" cols="20" rows="1" id="id_content" value="{{ content }}" autocomplete="new-title" required></div>
-<div class="field">
-	<label for="id_index">Предмет</label>
-	<select name="index" class="select" id="id_index">
-		<option value="">
-			<div class="option">
-		        <i class="fab fa-codepen"></i>
-		        <label>Не выбрано</label>
-		    </div>
-		</option>
-		<option value="i" {% if lesson == "i" %} selected {% endif %}>
-			<div class="option">
-		        <i class="fab fa-codepen"></i>
-		        <label>Программирование</label>
-		    </div>
-		</option>
-		<option value="p" {% if lesson == "p" %} selected {% endif %}>
-			<div class="option">
-		        <i class="fab fa-codepen"></i>
-		        <label>Физика</label>
-		    </div>
-		</option>
-		<option value="m" {% if lesson == "m" %} selected {% endif %}>
-			<div class="option">
-		        <i class="fab fa-codepen"></i>
-		        <label>Математика</label>
-		    </div>
-		</option>
-	</select>
-</div>
-<div class="btn">
-	<button class="button" type="submit" value="Save"><span>Save</span></button>
-</div>
+	<div class="field">
+		<label for="id_title">Название</label>
+		<input type="text" name="title" cols="20" rows="1" maxlength="120" value="{{ title }}" id="id_title" autocomplete="new-title" autofocus required></div>
+	<div class="field">
+		<label for="id_content">Ссылка</label>
+		<input type="text" name="content" cols="20" rows="1" id="id_content" value="{{ content }}" autocomplete="new-title" required></div>
+	<div class="field">
+		<label for="id_index">Предмет</label>
+		<select name="index" class="select" id="id_index">
+			<option value="">
+				<div class="option">
+					   <i class="fab fa-codepen"></i>
+					   <label>Не выбрано</label>
+				</div>
+			</option>
+			<option value="i" {% if lesson == "i" %} selected {% endif %}>
+				<div class="option">
+				       <i class="fab fa-codepen"></i>
+				       <label>Программирование</label>
+				   </div>
+			</option>
+			<option value="p" {% if lesson == "p" %} selected {% endif %}>
+				<div class="option">
+			        <i class="fab fa-codepen"></i>
+			        <label>Физика</label>
+			    </div>
+			</option>
+			<option value="m" {% if lesson == "m" %} selected {% endif %}>
+				<div class="option">
+			        <i class="fab fa-codepen"></i>
+			        <label>Математика</label>
+			    </div>
+			</option>
+		</select>
+	</div>
+	<div class="btn">
+		<button class="button" type="submit" value="Save"><span>Save</span></button>
+	</div>
 {% endblock form %}
