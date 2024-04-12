@@ -1,10 +1,10 @@
 {% extends 'basepostform.html' %}
 {% block title_name %}
-	EazyLearnZone - {% if id %}Edit{% else %}New{% endif %} Post
-{% endblock title_name %}
+	EazyLearnZone - {% if id %}Edit{% else %}New{% endif %} Olymp
+{% endblock %}
 {% block h1 %}
-	{% if id %}Изменение поста{% else %}Новый пост{% endif %}
-{% endblock h1 %}
+	{% if id %}Изменение олимпиады{% else %}Новая олимпиада{% endif %}
+{% endblock %}
 {% block form %}
 	<div class="field">
 		<label for="id_title">Название</label>
@@ -12,28 +12,27 @@
 	<div class="field">
 		<label for="id_content">Ссылка</label>
 		<input type="text" name="content" cols="20" rows="1" id="id_content" value="{{ content }}" autocomplete="new-title" required></div>
-	<div class="field">
-		<label for="id_index">Предмет</label>
+	<div class="sel">
 		<select name="index" class="select" id="id_index">
-			<option value="">
+			<option value="" disabled>
 				<div class="option">
-					   <i class="fab fa-codepen"></i>
-					   <label>Не выбрано</label>
+					<i class="fab fa-codepen"></i>
+					<label>Предмет</label>
 				</div>
 			</option>
-			<option value="i" {% if lesson == "i" %} selected {% endif %}>
+			<option value="i">
 				<div class="option">
-				       <i class="fab fa-codepen"></i>
-				       <label>Программирование</label>
-				   </div>
+				    <i class="fab fa-codepen"></i>
+				    <label>Программирование</label>
+				</div>
 			</option>
-			<option value="p" {% if lesson == "p" %} selected {% endif %}>
+			<option value="p">
 				<div class="option">
 			        <i class="fab fa-codepen"></i>
 			        <label>Физика</label>
 			    </div>
 			</option>
-			<option value="m" {% if lesson == "m" %} selected {% endif %}>
+			<option value="m">
 				<div class="option">
 			        <i class="fab fa-codepen"></i>
 			        <label>Математика</label>
@@ -44,4 +43,4 @@
 	<div class="btn">
 		<button class="button" type="submit" value="Save"><span>Save</span></button>
 	</div>
-{% endblock form %}
+{% endblock %}

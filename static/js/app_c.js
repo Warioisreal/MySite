@@ -18,3 +18,27 @@ function menuBtnChange() {
     closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
   }
 }
+
+
+
+document.querySelectorAll('textarea').forEach(el => {
+  el.style.height = el.setAttribute('style', 'height: ' + el.scrollHeight + 'px');
+  el.classList.add('200px');
+  el.addEventListener('input', e => {
+    el.style.height = '200px';
+    el.style.height = (el.scrollHeight) + 'px';
+  });
+});
+
+
+
+const textarea = document.querySelector('textarea')
+const lineNumbers = document.querySelector('.line-numbers')
+
+textarea.addEventListener('keyup', event => {
+  const numberOfLines = event.target.value.split('\n').length
+
+  lineNumbers.innerHTML = Array(numberOfLines)
+    .fill('<span></span>')
+    .join('')
+});

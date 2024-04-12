@@ -13,7 +13,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;*/
-.body{
+body{
   min-height: 100vh;
 }
 .block_content{

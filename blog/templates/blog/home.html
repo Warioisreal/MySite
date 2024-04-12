@@ -46,7 +46,7 @@
             {% endif %}
             <div class="user_info">
                 {% if request.user.is_authenticated %}
-                    <p>{{ request.user.username }}</p>
+                    <a class="profile" href="{% url 'profile' %}">{{ request.user.username }}</a>
                     <a class="linkout" href="{% url 'logout' %}"><img src="{% static 'imajes/logout.png' %}" style="width: 18px; height: 15px; filter: invert(180);" /></a>
                 {% else %}
                     <a class="linkin" href="{% url 'login' %}">Login</a>

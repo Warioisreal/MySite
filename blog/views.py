@@ -59,11 +59,17 @@ def math_task(request):
     }
     return render(request, 'blog/math_task.html', context)
 
-def sandbox(request):
-    return render(request, 'blog/sandbox.html')
-
 def about(request):
     return render(request, 'blog/about.html')
+
+@login_required
+def Profile(request):
+    tasks = Task.objects.filter(user=request.user.id)
+    context = {
+        'tasks': tasks,
+        'group': request.user.groups.all()[:1].get()
+    }
+    return render(request, 'blog/profile.html', context)
 
 def task_list(request):
     template = 'blog/task_list.html'
@@ -72,7 +78,7 @@ def task_list(request):
     clas = request.GET.get('c')
     theme = request.GET.get('n')
     tasks = Task.objects.filter(index = sub, clas = clas, chapter_title = theme)
-    paginator = Paginator(tasks, 8)
+    paginator = Paginator(tasks, 5)
     page = request.GET.get('page')
     tasks_only = request.GET.get('tasks_only')
     try:
@@ -122,7 +128,7 @@ def delete_post(request, id):
 
     elif request.method == 'POST':
         post.delete()
-        messages.success(request, 'The post has been deleted successfully.')
+        messages.success(request, 'The olymp has been deleted successfully.')
         return redirect('posts')
 
 
@@ -162,6 +168,10 @@ def create_post(request):
         return render(request, 'blog/post_form.html', context)
     elif request.method == 'POST':
         form = PostForm(request.POST)
+        context = {
+        'form': form,
+        'group': request.user.groups.all()
+        }
         if form.is_valid():
             user = form.save(commit=False)
             user.author = request.user
@@ -170,7 +180,7 @@ def create_post(request):
             return redirect('posts')
         else:
             messages.error(request, 'Please correct the following errors:')
-            return render(request, 'blog/post_form.html', {'form':form})
+            return render(request, 'blog/post_form.html', context)
 
 @login_required
 def delete_task(request, id):
@@ -219,14 +229,33 @@ def edit_task(request, id):
 
 @login_required
 def create_task(request):
+    sub = request.GET.get('s')
+    clas = request.GET.get('c')
+    theme = request.GET.get('n')
+    classes = ["7", "8", "9", "10", "11"]
+    themes = ["Тема1", "Тема2", "Тема3", "Тема4"]
     if request.method == 'GET':
         context = {
         'form': TaskForm(),
-        'group': request.user.groups.all()
+        'group': request.user.groups.all(),
+        'sub': sub,
+        'clas': clas,
+        'theme': theme,
+        'classes': classes,
+        'themes': themes
         }
         return render(request, 'blog/task_form.html', context)
     elif request.method == 'POST':
         form = TaskForm(request.POST)
+        context = {
+        'form': form,
+        'group': request.user.groups.all(),
+        'sub': sub,
+        'clas': clas,
+        'theme': theme,
+        'classes': classes,
+        'themes': themes
+        }
         if form.is_valid():
             user = form.save(commit=False)
             user.author = request.user
@@ -235,7 +264,7 @@ def create_task(request):
             return redirect('posts')
         else:
             messages.error(request, 'Please correct the following errors:')
-            return render(request, 'blog/task_form.html', {'form':form})
+            return render(request, 'blog/task_form.html', context)
 
 @login_required
 def delete_course(request, id):

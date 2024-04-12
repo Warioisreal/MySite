@@ -68,7 +68,7 @@ EasyLearnZone - {% if sub == "i" %} Programming
   <div class="wrapper">
     <h2 style="color: #fff; font-size: 35px;">{{theme}}</h2>
     {% if request.user.is_authenticated and group %}
-      <a href="{% url 'task-create' %}">добавить задание</a>
+      <a href="{% url 'task-create' %}?s={{sub}}&c={{clas}}&n={{theme}}">добавить задание</a>
     {% endif %}
     <ul id="task-list">
     {% include 'blog/task_list_page.html' %}

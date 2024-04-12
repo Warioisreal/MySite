@@ -6,7 +6,7 @@ EasyLearnZone - Programming task
 {% block sbar %}
       <div class="logo-details">
         <i class='bx bxl-c-plus-plus icon'><img src="{% static 'imajes/logo.png' %}" style="width: 27px; height: 27px; filter: invert(100%);"/></i>
-        <div class="logo_name">Программирование</div>
+        <div class="logo_name" style="font-size: 14px; font-weight: 500;">Программирование</div>
         <i class='bx bx-menu' id="btn"><img src="{% static 'imajes/3lines.png' %}" style="width: 27px; height: 27px;"/></i>
       </div>
       <ul class="nav-list">
@@ -30,7 +30,7 @@ EasyLearnZone - Programming task
           <span class="tooltip">Авторские курсы</span>
         </li>
         <li>
-          <a href="{% url 'sandbox' %}">
+          <a href="{% url 'compiler' %}">
             <i class='bx bx-user'><img src="{% static 'imajes/itimg1.png' %}" style="filter:invert(180);" /></i>
             <span class="links_name">Песочница</span>
           </a>
@@ -66,9 +66,9 @@ EasyLearnZone - Programming task
         <details>
             <summary class="legend">8 класс</summary>
             <ol class="details">
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=8&n=Тема1" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=8&n=Тема2" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=8&n=Тема3" class="href">Раскрывающийся текст</a></li>
             </ol>
         </details>
     </li>
@@ -76,9 +76,9 @@ EasyLearnZone - Programming task
         <details>
             <summary class="legend">9 класс</summary>
             <ol class="details">
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=9&n=Тема1" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=9&n=Тема2" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=9&n=Тема3" class="href">Раскрывающийся текст</a></li>
             </ol>
         </details>
     </li>
@@ -86,9 +86,9 @@ EasyLearnZone - Programming task
         <details>
             <summary class="legend">10 класс</summary>
             <ol class="details">
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=10&n=Тема1" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=10&n=Тема2" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=10&n=Тема3" class="href">Раскрывающийся текст</a></li>
             </ol>
         </details>
     </li>
@@ -96,9 +96,9 @@ EasyLearnZone - Programming task
         <details>
             <summary class="legend">11 класс</summary>
             <ol class="details">
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
-                <li><a href="{% url 'task-list' %}" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=11&n=Тема1" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=11&n=Тема2" class="href">Раскрывающийся текст</a></li>
+                <li><a href="{% url 'task-list' %}?s=i&c=11&n=Тема3" class="href">Раскрывающийся текст</a></li>
             </ol>
         </details>
     </li>

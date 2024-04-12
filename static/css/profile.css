@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+::selection{
+  background: #eee2
+}
+input:-webkit-autofill::first-line {
+      font-size: 17px;
+    }
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+}
+.background{
+  background: -webkit-linear-gradient( left, #0d1116, #171b20 );
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+.home{
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 100px;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 15px;
+  border: none;
+  position: absolute;
+  gap: 50px;
+}
+.wrapper {
+  height: fit-content;
+  border-radius: 20px;
+  border: solid 1px #555;
+  width: 280px;
+  position: relative;
+  padding: 5px;
+}
+.user{
+  width: 80%;
+}
+.container{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 15px;
+  background: #fff;
+  & p{
+    color: #2f2f2f;
+  }
+  & a{
+    color: #1e5ab4;
+    text-decoration: none;
+  }
+  & a:hover{
+    text-decoration: underline;
+  }
+}
+.list-container h1{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 15px;
+  background: #fff;
+}
+.block{
+  position: relative;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  & p{
+    color: #2f2f2f;
+  }
+  & a{
+    color: #1e5ab4;
+    text-decoration: none;
+  }
+  & a:hover{
+    text-decoration: underline;
+  }
+}

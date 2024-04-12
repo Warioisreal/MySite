@@ -283,10 +283,15 @@ select:-webkit-autofill:focus {
   font-size: 1.2em;
   font-weight: 500;
 }
-.user_info p{
+.user_info .profile{
   position: relative;
   padding: 6px 10px 6px 10px;
   border-right: solid 1px #3f3d42;
+  color: #fff;
+  text-decoration: none;
+  &:hover{
+    color: #f1c40f;
+  }
 }
 .linkout{
   padding: 13px 10px 13px 11px;
@@ -381,10 +386,10 @@ select:-webkit-autofill:focus {
 }
 @keyframes pulsation{
   50%{
-    box-shadow: 0px 0px 17px #f1c40f;
+    box-shadow: 0px 0px 17px rgba(180, 180, 180, 0.7);
   }
   0%, 100%{
-    box-shadow: 0px 0px 17px #f1c40f00;
+    box-shadow: 0px 0px 17px rgba(180, 180, 180, 0);
   }
 }
 .errorlist {

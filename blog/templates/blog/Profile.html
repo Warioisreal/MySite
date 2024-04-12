@@ -1,0 +1,72 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/styleload.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+        <script src="{% static 'js/preloader_function.js' %}"></script>
+        <link rel="website icon" href="{% static 'imajes/logo.png' %}">
+        <title>EazyLearnZone - Profile</title>
+    </head>
+    <body>
+    <div class="preloader">
+      <div class="loader"></div>
+    </div>
+    <div class="background"></div>
+    <section class="home">
+      <div class="wrapper user">
+        <div class="container">
+            <p>Имя пользователя: {{request.user.username}}</p>
+            <p>Почта: {{request.user.email}} %___Изменить почту___%</p>
+            <p>Уровень доступа: {{group}}</p>
+            <p>%___Изменить пароль___%</p>
+            <a href="{% url 'posts' %}">на главную страницу</a>
+        </div>
+      </div>
+      <div class="list-container">
+        <div class="wrapper"><h1>Ваши задания:</h1></div>
+        <ul>
+        {% for i in tasks%}
+          <li class="block">
+            <p>Предмет: {% if i.index == "i" %}Программирование{% elif i.index == "p" %}Физика{% elif i.index == "m"%}Математика{% endif %}</p>
+            <p>Класс: {{i.clas}}</p>
+            <p>Тема: {{i.chapter_title}}</p>
+            <p>Номер: {{i.id}}</p>
+            <a href="#">ссылка</a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="list-container">
+        <div class="wrapper"><h1>Ваши задания:</h1></div>
+        <ul>
+        {% for i in tasks%}
+          <li class="block">
+            <p>Предмет: {% if i.index == "i" %}Программирование{% elif i.index == "p" %}Физика{% elif i.index == "m"%}Математика{% endif %}</p>
+            <p>Класс: {{i.clas}}</p>
+            <p>Тема: {{i.chapter_title}}</p>
+            <p>Номер: {{i.id}}</p>
+            <a href="#">ссылка</a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="list-container">
+        <div class="wrapper"><h1>Ваши задания:</h1></div>
+        <ul>
+        {% for i in tasks%}
+          <li class="block">
+            <p>Предмет: {% if i.index == "i" %}Программирование{% elif i.index == "p" %}Физика{% elif i.index == "m"%}Математика{% endif %}</p>
+            <p>Класс: {{i.clas}}</p>
+            <p>Тема: {{i.chapter_title}}</p>
+            <p>Номер: {{i.id}}</p>
+            <a href="#">ссылка</a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

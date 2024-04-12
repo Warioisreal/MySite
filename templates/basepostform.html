@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/styleload.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
-    <script src="{% static 'js/preloader_function.js' %}" defer></script>
+    <script src="{% static 'js/preloader_function.js' %}"></script>
+    <script src="{% static 'js/juqery-3.7.1.min.js' %}" defer></script>
+    <script src="{% static 'js/FormJS.js' %}" defer></script>
     <link rel="website icon" href="{% static 'imajes/logo.png' %}">
     <title>
     {% if group %}
-      {% block title_name %}{% endblock title_name %}
+      {% block title_name %}{%endblock%}
     {%else%}
       Not Enough Rights
     {% endif %}
@@ -24,7 +26,7 @@
     <section class="home">
       {% if group %}
       <div class="preview">
-        <h1>{%block h1%}{%endblock h1%}</h1>
+        <h1>{%block h1%}{%endblock%}</h1>
       </div>
       <div class="wrapper">
         <div class="form-container">
@@ -32,7 +34,7 @@
             <form method="POST">
               {% csrf_token %}
               {%block form%}
-              {%endblock form%}
+              {%endblock%}
             </form>
           </div>
         </div>
@@ -41,8 +43,6 @@
       <h1 style="color: #fff; font-size: 40px;">У вас недостаточно прав</h1>
       <a href="{% url 'posts' %}" style="text-decoration: none;">На главную страницу</a>
       {% endif %}
-      <main>
-      </main>
     </section>
   </body>
 </html>

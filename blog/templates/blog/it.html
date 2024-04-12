@@ -6,7 +6,7 @@ EasyLearnZone - Programming
 {% block sbar %}
       <div class="logo-details">
         <i class='bx bxl-c-plus-plus icon'><img src="{% static 'imajes/logo.png' %}" style="width: 27px; height: 27px; filter: invert(100%);"/></i>
-        <div class="logo_name">Программирование</div>
+        <div class="logo_name" style="font-size: 14px; font-weight: 500;">Программирование</div>
         <i class='bx bx-menu' id="btn"><img src="{% static 'imajes/3lines.png' %}" style="width: 27px; height: 27px;"/></i>
       </div>
       <ul class="nav-list">
@@ -30,7 +30,7 @@ EasyLearnZone - Programming
           <span class="tooltip">Авторские курсы</span>
         </li>
         <li>
-          <a href="{% url 'sandbox' %}">
+          <a href="{% url 'compiler' %}">
             <i class='bx bx-user'><img src="{% static 'imajes/itimg1.png' %}" style="filter:invert(180);" /></i>
             <span class="links_name">Песочница</span>
           </a>
@@ -55,17 +55,15 @@ EasyLearnZone - Programming
             {% endif %}
             {% for post in posts %}
                 <li class="block">
-                    <div class="background">
-                        <p>{{ post.title }}</p>
-                        <a href="{{ post.content }}">ссылка</a>
-                        <small>Опубликовано: {{ post.published_at | date:"M d, Y" }}
-                            {% if request.user.is_authenticated and group %}
-                                <a href="{% url 'post-edit' post.id %}">Изменить</a>
-                                <a href="{% url 'post-delete' post.id%}">Удалить</a>
-                                Автор: {{ post.author }}
-                            {% endif %}
-                        </small>
-                    </div>
+                    <p>{{ post.title }}</p>
+                    <a href="{{ post.content }}">ссылка</a>
+                    <small>Опубликовано: {{ post.published_at | date:"M d, Y" }}
+                        {% if request.user.is_authenticated and group %}
+                            <a href="{% url 'post-edit' post.id %}">Изменить</a>
+                            <a href="{% url 'post-delete' post.id%}">Удалить</a>
+                            Автор: {{ post.author }}
+                        {% endif %}
+                    </small>
                 </li>
             {% endfor %}
         </ul>

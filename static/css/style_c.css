@@ -8,76 +8,32 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-.body{
+body{
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.main-content {
-  background-color: #000;
-}
-.home{
-}
-.backgroundimgp, .backgroundimgm, .backgroundimgi{
+.block_content{
   width: 100%;
-  height: 100vh;
-  position: fixed;
-  background-color: #000;
-  background-position: center;
-  background-size: cover;
-  pointer-events: none;
-}
-.backgroundimgp{
-  background-image: url("../imajes/phisicsbackground.jpg");
-  filter: brightness(0.1);
-
-}
-.backgroundimgm{
-  background-image: url("../imajes/mathbackground.jpg");
-  filter: grayscale(100%) invert(100%) brightness(0.1);
-}
-.wrapper{
   position: absolute;
-  top: 5%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 100px;
-  overflow: hidden;
-  background: transparent;
-}
-.wrapper a{
-  text-decoration: none;
-  color: #1e5ab4;
-}
-.wrapper a:hover{
-  text-decoration: underline;
-}
-.block{
-  margin: 25px;
-  padding: 10px;
+  top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 500px;
-  height: 100px;
-  border-radius: 8px;
-  background: rgba(180, 180, 180);
+  align-items: center;
 }
-.block p{
-  color: #2f2f2f;
-}
-.block small{
-  color: #2f2f2f;
-}
-.block a{
-  text-decoration: none;
-}
-.block a:hover{
-  text-decoration: underline;
+.background{
+  background: -webkit-linear-gradient(
+    left,
+    #0d1116,
+    #171b20
+  );
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
 }
 .sidebar {
   position: fixed;
@@ -298,5 +254,127 @@
 @media (max-width: 420px) {
   .sidebar li .tooltip {
     display: none;
+  }
+}
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.input-form, .output-form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: transparent;
+  padding: 30px;
+  border-radius: 20px;
+  border: solid 3px #555;
+  & label{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    left: 20px;
+  }
+}
+.codearea{
+  width: 100%;
+  display: inline-flex;
+  line-height: 21px;
+  padding: 20px 10px;
+}
+.input-area, .output-area{
+  position: relative;
+  line-height: 21px;
+  height: 200px;
+  width: 100%;
+  resize: none;
+  border-radius: 10px;
+  padding: 10px 10px 10px 20px;
+  background: transparent;
+  border: solid 2px #555;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  overflow: hidden;
+  &:focus{
+    outline: none;
+  }
+}
+.input-area{
+  left: -20px;
+}
+.input-area:focus{
+  border-color: #f1c40f;
+}
+.output-area{
+  height: 100px;
+  width: clamp(100px, 100%, 30%);
+  padding: 10px;
+}
+.line-numbers {
+  position: relative;
+  top: 11px;
+  left: -5px;
+  width: 20px;
+  text-align: right;
+}
+.line-numbers span {
+  counter-increment: linenumber;
+}
+.line-numbers span::before {
+  content: counter(linenumber);
+  display: block;
+  color: #506882;
+}
+.button {
+  height: 40px;
+  width: 120px;
+  margin-top: 15px;
+  z-index: 1;
+  border: solid 1px #555;
+  border-radius: 10px;
+  cursor: pointer;
+  --tilt: 40px;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  color: #f1c40f;
+  background: transparent;
+  & span {
+    font-size: 25px;
+    font-weight: 600;
+    mix-blend-mode: difference;
+  }
+  &:before,
+  &:after {
+    content: "";
+    z-index: -1;
+    width: calc(100% + var(--tilt));
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    background: #f1c40f;
+    clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 100%, 0 100%);
+    transition: transform 0.9s;
+  }
+  &:before {
+    left: calc(-100% - var(--tilt));
+  }
+  &:after {
+    left: 100%;
+    transform: rotate(180deg);
+  }
+  &:hover:before {
+    transform: translateX(100%);
+  }
+  &:hover:after {
+    transform: rotate(180deg) translateX(100%);
   }
 }
