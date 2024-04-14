@@ -1,7 +1,20 @@
 {% for task in tasks %}
   <li class="block">
-    <i>{{task.id}}</i>
-    <p>{{task.title}}</p>
-    <p>{{task.content}}</p>
+    <div class="inf-block">
+      <i>{{task.id}}</i>
+      <p>{{task.title}}</p>
+      <p>{{task.content}}</p>
+      <p>{{task.author}}</p>
+      <a href="{% url 'task' task.id %}">Перейти</a>
+    </div>
+    <img src="{{ MEDIA_URL }}{{ task.upload }}">
+    <small>Опубликовано: {{ task.published_at | date:"M d, Y" }}</small>
+    {% if request.user.is_authenticated and group %}
+    <div class="admin-block">
+      <a href="{% url 'task-edit' task.id %}">Изменить</a>
+      <a href="{% url 'task-delete' task.id%}">Удалить</a>
+      Опубликовал: {{ task.user }}
+    </div>
+    {% endif %}
   </li>
 {% endfor %}

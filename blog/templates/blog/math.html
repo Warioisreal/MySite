@@ -55,7 +55,7 @@ EasyLearnZone - Math
                             {% if request.user.is_authenticated and group %}
                                 <a href="{% url 'post-edit' post.id %}">Изменить</a>
                                 <a href="{% url 'post-delete' post.id%}">Удалить</a>
-                                Автор: {{ post.author }}
+                                Опубликовал: {{ post.author }}
                             {% endif %}
                         </small>
                     </div>

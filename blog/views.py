@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
+from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import  login_required
 from django.contrib import messages
 from .models import Post, Task, Solution, Comment, Course
@@ -61,6 +62,31 @@ def math_task(request):
 
 def about(request):
     return render(request, 'blog/about.html')
+
+def course_list(request):
+    template = 'blog/course_list.html'
+    template_page = 'blog/course_list_page.html'
+    sub = request.GET.get('s')
+    courses = Course.objects.filter(index = sub)
+    paginator = Paginator(courses, 5)
+    page = request.GET.get('page')
+    courses_only = request.GET.get('courses_only')
+    try:
+        courses = paginator.page(page)
+    except PageNotAnInteger:
+        courses = paginator.page(1)
+    except EmptyPage:
+        if courses_only:
+            return HttpResponse('')
+        courses = paginator.page(paginator.num_pages)
+    context = {
+    'courses': courses,
+    'group': request.user.groups.all(),
+    'sub': sub,
+    }
+    if courses_only:
+        return render(request, template_page, context)
+    return render(request, template, context)
 
 @login_required
 def Profile(request):
@@ -138,7 +164,8 @@ def edit_post(request, id):
     post = get_object_or_404(queryset, pk=id)
     if request.method == 'GET':
         context = {
-        'form': PostForm(instance=post), 'id': id,
+        'form': PostForm(instance=post),
+        'id': id,
         'group': request.user.groups.all(),
         'title': post.title,
         'content': post.content,
@@ -246,7 +273,12 @@ def create_task(request):
         }
         return render(request, 'blog/task_form.html', context)
     elif request.method == 'POST':
-        form = TaskForm(request.POST)
+        # form = TaskForm(request.POST)
+        form = TaskForm(request.POST, request.FILES)
+        for field in form:
+            if field.errors:
+                print(field.name, field.errors)
+
         context = {
         'form': form,
         'group': request.user.groups.all(),
@@ -254,17 +286,18 @@ def create_task(request):
         'clas': clas,
         'theme': theme,
         'classes': classes,
-        'themes': themes
+        'themes': themes,
         }
-        if form.is_valid():
-            user = form.save(commit=False)
-            user.author = request.user
-            user.save()
-            messages.success(request, 'The task has been created successfully.')
-            return redirect('posts')
-        else:
-            messages.error(request, 'Please correct the following errors:')
-            return render(request, 'blog/task_form.html', context)
+        return redirect('posts')
+        # if form.is_valid():
+        #     user = form.save(commit=False)
+        #     user.author = request.user
+        #     user.save()
+        #     messages.success(request, 'The task has been created successfully.')
+        #     return redirect('posts')
+        # else:
+        #     messages.error(request, 'Please correct the following errors:')
+        #     return render(request, 'blog/task_form.html', context)
 
 @login_required
 def delete_course(request, id):

@@ -1,12 +1,3 @@
-function validateFileType(){
-    var fileName = document.getElementById("fileName").value;
-    var idxDot = fileName.lastIndexOf(".") + 1;
-    var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-    if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
-    }else{
-        alert("Только jpg/jpeg и png файлы поддерживаются!");
-    }
-}
 /* ===== Logic for creating fake Select Boxes ===== */
 $(".sel").each(function () {
   $(this).children("select").css("display", "none");

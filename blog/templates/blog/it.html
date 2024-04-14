@@ -23,7 +23,7 @@ EasyLearnZone - Programming
           <span class="tooltip">На главную страницу</span>
         </li>
         <li>
-          <a href="#">
+          <a href="{% url 'course-list' %}?s=i">
             <i class='bx bx-user'><img src="{% static 'imajes/book.png' %}" style="filter:invert(180);" /></i>
             <span class="links_name">Авторские курсы</span>
           </a>
@@ -48,24 +48,29 @@ EasyLearnZone - Programming
 {% block content %}
     <section class="home">
         <div class="backgroundimgi"></div>
-        <ul class="wrapper">
+        <div class="wrapper">
             <h2 style="color: #fff; font-size: 35px;">Олимпиады</h2>
             {% if request.user.is_authenticated and group %}
                 <a href="{% url 'post-create' %}">добавить олимпиаду</a>
             {% endif %}
+            <ul id="task-list" class="task-list">
             {% for post in posts %}
                 <li class="block">
+                  <div class="inf-block">
                     <p>{{ post.title }}</p>
                     <a href="{{ post.content }}">ссылка</a>
-                    <small>Опубликовано: {{ post.published_at | date:"M d, Y" }}
-                        {% if request.user.is_authenticated and group %}
-                            <a href="{% url 'post-edit' post.id %}">Изменить</a>
-                            <a href="{% url 'post-delete' post.id%}">Удалить</a>
-                            Автор: {{ post.author }}
-                        {% endif %}
-                    </small>
+                  </div>
+                  <small>Опубликовано: {{ post.published_at | date:"M d, Y" }}</small>
+                  {% if request.user.is_authenticated and group %}
+                  <div class="admin-block">
+                    <a href="{% url 'post-edit' post.id %}">Изменить</a>
+                    <a href="{% url 'post-delete' post.id %}">Удалить</a>
+                    Опубликовал: {{ post.author }}
+                  </div>
+                  {% endif %}
                 </li>
             {% endfor %}
-        </ul>
+          </ul>
+        </div>
     </section>
 {% endblock content %}

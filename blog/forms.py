@@ -1,8 +1,6 @@
 from django.forms import ModelForm
 from .models import Post, Task, Solution, Comment, Course
 from django import forms
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 
 class PostForm(ModelForm):
     class Meta:
@@ -13,18 +11,30 @@ class PostForm(ModelForm):
         'index'
         ]
 
+
 class TaskForm(ModelForm):
     class Meta:
         model = Task
         fields = [
         'title',
-        'chapter_title',
-        'upload',
         'content',
         'author',
-        'index'
+        'upload',
+        'index',
+        'clas',
+        'chapter_title'
         ]
-
+'''
+{
+'title': ['qwe'],
+'content': ['qwe'],
+'author': ['qwe'],
+'upload': ['Scan_0290_FKoMIP0.jpg'],
+'index': ['i'],
+'clas': ['7'],
+'chapter_title': ['Тема1']
+}
+'''
 class SolutionForm(ModelForm):
     class Meta:
         model = Solution
@@ -51,5 +61,6 @@ class CourseForm(ModelForm):
         'title',
         'upload',
         'content',
-        'author'
+        'author',
+        'index'
         ]

@@ -1,0 +1,14 @@
+{% for course in courses %}
+<li class="block">
+  <i>{{ course.id }}</i>
+  <p>{{ course.title }}</p>
+  <p>{{ course.content }}</p>
+  <p>{{ course.author }}</p>
+  <p id="rate"></p>
+  <script>
+    var rate_sum = {{ course.rate_sum }};
+    var rate_count = {{ course.rate_count }};
+    document.getElementById("rate").textContent = Math.round(rate_sum / rate_count);
+  </script/>
+</li>
+{% endfor %}

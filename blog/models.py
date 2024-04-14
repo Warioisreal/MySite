@@ -7,8 +7,7 @@ from django.contrib.auth.models import User
 #python manage.py createsuperuser
 
 def user_directory_path(instance, filename):
-    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
-    return 'user_{0}/{1}'.format(instance.user.id, filename)
+    return '{0}/{1}/{2}/user_{3}/{4}'.format(instance.index, instance.clas, instance.chapter_title, instance.user.id, filename)
 
 
 
@@ -30,12 +29,12 @@ class Post(models.Model):
 class Task(models.Model):
     title = models.CharField(max_length=120)
     chapter_title = models.CharField(max_length=120)
-    upload = models.ImageField(upload_to=user_directory_path)
+    upload = models.FileField(upload_to=user_directory_path)
     content = models.TextField()
     author = models.CharField(max_length=120)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     index = models.CharField(max_length=1)
-    clas = models.IntegerField()
+    clas = models.CharField(max_length=2)
     published_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
@@ -84,6 +83,7 @@ class Course(models.Model):
     content = models.TextField()
     author = models.CharField(max_length=120)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    index = models.CharField(max_length=1)
     rate_count = models.IntegerField()
     rate_sum = models.IntegerField()
     published_at = models.DateTimeField(default=timezone.now)

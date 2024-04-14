@@ -1,4 +1,4 @@
-{% extends 'basepostform.html' %}
+{% extends 'basetaskform.html' %}
 {% block title_name %}
 	EazyLearnZone - {% if id %}Edit{% else %}New{% endif %} Task
 {% endblock title_name %}
@@ -17,9 +17,9 @@
 		<input type="text" name="author" cols="20" rows="1" id="id_author" value="{{ content }}" autocomplete="new-title" required></div>
 	<div class="field">
 		<label for="id_upload">Изображения к заданию</label>
-		<input type="file" name="upload" id="id_upload"
-		accept=".jpg,.jpeg,.png" onchange="validateFileType()" autocomplete="new-file">
+		<input type="file" name="upload" id="id_upload" required>
 	</div>
+
 	<div class="sel">
 		<select name="index" class="select" id="id_index" required>
 			<option value="">

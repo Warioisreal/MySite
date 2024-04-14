@@ -1,7 +1,7 @@
 {% extends 'basetask.html' %}
 {%load static %}
 {% block title_name %}
-EasyLearnZone - Programming task
+EasyLearnZone - Programming themes
 {% endblock title_name %}
 {% block sbar %}
       <div class="logo-details">
@@ -23,7 +23,7 @@ EasyLearnZone - Programming task
           <span class="tooltip">На главную страницу</span>
         </li>
         <li>
-          <a href="#">
+          <a href="{% url 'course-list' %}?s=i">
             <i class='bx bx-user'><img src="{% static 'imajes/book.png' %}" style="filter:invert(180);" /></i>
             <span class="links_name">Авторские курсы</span>
           </a>

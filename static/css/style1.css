@@ -7,6 +7,21 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  &::-webkit-scrollbar{
+    width: 15px;
+  }
+  &::-webkit-scrollbar-track{
+    background: #333;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: #555;
+    border-radius: 100px;
+    border: solid 2px #333;
+    width: 2px;
+  }
+  &::-webkit-scrollbar-thumb:hover{
+    background-color: #f1c40f;
+  }
 }
 .body{
   min-height: 100vh;
@@ -51,33 +66,70 @@
 }
 .wrapper a{
   text-decoration: none;
-  color: #1e5ab4;
+  color: #0150ff;
 }
 .wrapper a:hover{
-  text-decoration: underline;
+  color: #f1c40f;
+}
+.task-list{
+  margin: 25px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+
 }
 .block{
-  margin: 25px;
   padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  width: 500px;
-  height: 100px;
+  width: clamp(300px, 100%, 400px);
+  height: auto;
   border-radius: 8px;
   background: rgba(180, 180, 180);
+  & {
+
+  }
+  & .inf-block p, & .inf-block i{
+    position: relative;
+    height: fit-content;
+    width: 280px;
+    font-size: 20px;
+    color: #2f2f2f;
+  }
+  & .inf-block a{
+    font-size: 17px;
+    width: fit-content;
+    color: #0150ff;
+    text-decoration: none;
+  }
+  & .inf-block a:hover{
+    color: #f1c40f;
+  }
+  & img{
+    position: relative;
+    width: 100px;
+    height: fit-content;
+  }
+  & small{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 12px;
+    color: #2f2f2f;
+  }
 }
-.block p{
-  color: #2f2f2f;
-}
-.block small{
-  color: #2f2f2f;
-}
-.block a{
-  text-decoration: none;
-}
-.block a:hover{
-  text-decoration: underline;
+.admin-block{
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px #555;
+  & a{
+    font-size: 12px;
+  }
 }
 .sidebar {
   position: fixed;
